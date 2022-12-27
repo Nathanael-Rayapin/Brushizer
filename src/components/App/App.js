@@ -20,11 +20,34 @@ import Contact from '../Contact/Contact';
 import Protected from '../Admin/Protected/Protected';
 import NotFound404 from '../NotFound404/NotFound404';
 
+import AnimatedCursor from "react-animated-cursor"
 
 function App() {
 
   return (
     <div className="App">
+      <AnimatedCursor
+      innerSize={10}
+      outerSize={50}
+      color='44, 42, 43'
+      outerAlpha={0.2}
+      innerScale={1}
+      outerScale={1.8}
+      trailingSpeed={1}
+      clickables={[
+        'a',
+        'input[type="text"]',
+        'input[type="email"]',
+        'input[type="number"]',
+        'input[type="submit"]',
+        'input[type="image"]',
+        'label[for]',
+        'select',
+        'textarea',
+        'button',
+        '.link'
+      ]}
+    />
       <Routes>
 
         {/* HOME */}
