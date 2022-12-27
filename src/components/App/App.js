@@ -18,7 +18,6 @@ import Collection from '../Collections/Collection/Collection';
 import Charity from '../Charity/Charity';
 import Contact from '../Contact/Contact';
 import Protected from '../Admin/Protected/Protected';
-import Admin from '../Admin/Admin'
 import NotFound404 from '../NotFound404/NotFound404';
 
 

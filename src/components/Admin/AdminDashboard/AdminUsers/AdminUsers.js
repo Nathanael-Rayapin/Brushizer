@@ -1,5 +1,4 @@
 import './style.scss';
-import { Icon } from 'semantic-ui-react';
 import DeleteUserModal from '../DeleteUserModal/DeleteUserModal';
 
 const AdminUsers = ({ data, handleDeleteUser }) => {
@@ -24,7 +23,6 @@ const AdminUsers = ({ data, handleDeleteUser }) => {
             <td className='user-row-email'>{user.email}</td>
             <td className='user-row-id'>{user.role_id}</td>
             <td className='user-row-options'>
-              {/* <Icon className='user-row-options-edit' name="edit" size="small" /> */}
               <DeleteUserModal user={user} handleDeleteUser={handleDeleteUser} />
             </td>
           </tr>

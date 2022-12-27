@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Button, Modal } from 'semantic-ui-react'
 import { useEffect, useState } from 'react';
 import AvatarItem from './AvatarItem/AvatarItem';
@@ -102,7 +101,3 @@ AvatarModal.propTypes = {
 };
 
 export default AvatarModal;
-
-
-
-// <a href="https://www.freepik.com/free-vector/find-person-job-opportunity_8063764.htm#query=avatar&position=0&from_view=keyword">Image by studiogstock</a> on Freepik

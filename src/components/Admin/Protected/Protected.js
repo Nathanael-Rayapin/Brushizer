@@ -2,8 +2,6 @@ import { fetchUserInfos } from '../../../utils/fetchUserInfos';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import Footer from '../../Footer/Footer';
-import Header from '../../Header/Header';
 
 import './style.scss'
 import Admin from '../Admin';
