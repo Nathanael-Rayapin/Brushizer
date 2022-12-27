@@ -2,7 +2,7 @@
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import Filter from '../Collection/Filter/Filter'
-import { Icon } from 'semantic-ui-react';
+import { Icon, Popup } from 'semantic-ui-react';
 
 import './style.scss'
 
@@ -18,10 +18,19 @@ function Collection() {
                         <div className='collection_section_infos_detail'>
                             <div className='collection_section_infos_detail_img'></div>
                             <div className='collection_section_infos_detail_name'>
-                                <div className='collection_section_infos_detail_name-collection'>
-                                    BRUSHIZER<Icon size='small' name="check circle" />
+                                <div className='collection_section_infos_detail_name-collection'>BRUSHIZER <Popup
+                                    trigger={<Icon size='small' name="check circle" />}
+                                    content='This collection has been verified.'
+                                    inverted
+                                    />
+                                    
                                 </div>
-                                <div className='collection_section_infos_detail_name-artist'><span>by</span> Mezange <Icon size='small' name="check circle" /></div>
+                                <div className='collection_section_infos_detail_name-artist'><span>by</span> Mezange <Popup
+                                    trigger={<Icon size='small' name="check circle" />}
+                                    content='This artist has been verified.'
+                                    inverted
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className='collection_section_infos_stats'>
