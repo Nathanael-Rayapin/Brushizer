@@ -1,0 +1,129 @@
+@use 'src/styles/vars' as v;
+
+// Style général de la page SignUp
+.signin {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    width: 100%;
+    background: v.$second-color;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+
+    &_brand {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding: 0 3rem 8rem 3rem;
+        width: 45%;
+
+        &_logo {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin: 0 0 0.75rem;
+        }
+
+        &_text {
+            font-size: 3.5rem;
+            font-weight: 100;
+            text-align: left;
+        }
+    }
+    &-wrapper {
+        display: flex;
+        width: 55%;
+        gap: 1.5rem;
+        align-items: left;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #f5efef;
+        
+        color: v.$first-color;
+        &-title {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 2.75rem;
+            font-weight: 600;
+            text-align: center;
+            button {
+                background-color: v.$first-color;
+                padding: 0.5rem;
+                color: v.$third-color;
+                font-size: 1rem;
+                border: 0px;
+                font-weight: 800;
+                box-shadow: 2px 4px 2px v.$first-color;
+                &:hover {
+                    transform: translateX(-20px);
+                    color: v.$first-color;
+                    box-shadow: v.$third-color 1px 1px 80px 2px;
+                    background: v.$third-color repeat scroll 0% 0%;
+                    transition: all 0.5s ease 0s;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .signin {
+        flex-direction: column;
+        align-items: center;
+        &_brand {
+            text-align: center;
+            width: 100%;
+            padding: 2rem;
+            &_logo {
+                font-size: 4rem;
+            }
+            &_text {
+                font-size: 2.8rem;
+                text-align: center;
+            }
+        }
+        &-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .signin {
+        &_brand {
+            &_logo {
+                font-size: 4rem;
+            }
+            &_text {
+                font-size: 2.8rem;
+                text-align: center;
+            }
+        }
+        &-wrapper {
+           justify-content: space-evenly;
+           gap: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+.signin {
+        &_brand {
+            padding: 1rem;
+            &_logo {
+                font-size: 3rem;
+            }
+            &_text {
+                font-size: 2rem;
+                font-weight: 200;
+                text-align: center;
+            }
+        }
+        &-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

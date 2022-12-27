@@ -1,0 +1,50 @@
+@use 'src/styles/vars' as v;
+
+.logout {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    &-btn {
+        color: #b0a19c;
+        background-color: #2c2a2b;
+        border: 2px solid #2c2a2b;
+        font-weight: 600;
+        padding: 0.7rem;
+        border-radius: 0.5rem;
+        transition: transform 0.5s ease 0s;
+        &:hover {
+            transform: scale(1.05);
+           opacity: 0.8;
+           transition: transform 0.5s ease 0s;
+        }
+    }
+    &-pseudo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: transform 0.5s ease 0s;
+        &:hover {
+            transition: transform 0.5s ease 0s;
+            transform: scale(1.05);
+            color : v.$fourth-color;
+        }
+    }
+}   
+
+
+/* Responsive < 1200px */
+@media screen and (max-width: 1200px) {
+   .logout {
+        width: 100%;
+        justify-content: space-around;
+        &-btn {
+            background-color: v.$first-color;
+            color: v.$second-color;
+            padding: 0.3rem;
+        }
+        &-pseudo {
+            font-weight: 700;
+            color: v.$first-color;
+        }
+   }
+}

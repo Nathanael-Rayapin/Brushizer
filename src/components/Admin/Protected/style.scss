@@ -1,0 +1,19 @@
+@use 'src/styles/vars' as v;
+
+.protected_container {
+    margin: auto;
+    display: grid;
+    place-items: center;
+    padding: 4rem;
+    background-color: v.$third-color;
+    &-img {
+        width: 10%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .protected_container {
+        padding-top: 16vh;
+    }
+}
+

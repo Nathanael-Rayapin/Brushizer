@@ -1,0 +1,47 @@
+@use 'src/styles/vars' as v;
+
+.carousel_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 1rem;
+    width: 90%;
+
+    &-content {
+        mask-image: linear-gradient(to right, transparent, v.$second-color, v.$second-color, v.$second-color, v.$second-color, v.$second-color, v.$second-color, transparent);
+    }
+}
+
+.loader-wrapper {
+    width: 100px;
+    height: 100px;
+
+    img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        transition: all .4s ease;
+    }
+
+    .swiper-slide.swiper-slide-prev {
+        transform: translateX(15%);
+    }
+
+    .swiper-slide.swiper-slide-next {
+        transform: translateX(-15%);
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .btn-left,
+    .btn-right {
+        display: none;
+    }
+}

@@ -1,0 +1,30 @@
+@use 'src/styles/vars' as v;
+
+.artwork_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4.5rem 0;
+    background-color: v.$third-color;
+    position: relative;
+
+        &_background{
+            position: absolute;
+            top: 20%;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            overflow: hidden;
+            text-transform: uppercase;
+            font-weight: 900;
+            -webkit-text-stroke: 0.2rem v.$fourth-color;
+            color: transparent;
+        }
+}
+
+.loader-wrapper {
+    &-text {
+        margin-top: 1rem;
+        text-align: center;
+    }
+}

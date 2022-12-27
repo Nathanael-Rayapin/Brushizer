@@ -1,0 +1,26 @@
+@use 'vars' as v;
+@use 'reset';
+
+html {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body {
+    background: v.$body-color;
+    font-family: 'Fira Sans';
+    color: v.$first-color;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+::selection {
+    background-color: hsl(15, 4%, 80%);
+    opacity: 0.2;
+}
+
+#root {
+    height: 100%;
+}

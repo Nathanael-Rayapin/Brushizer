@@ -1,0 +1,52 @@
+@use 'src/styles/vars' as v;
+
+
+.header_nav {
+    display: none;
+
+    /* Responsive > 1200px */
+    @media screen and (min-width: 1200px) {
+        display: flex;
+
+        &_list {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            color: v.$first-color;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-left: 1rem;
+            cursor: pointer;
+            gap: 1.5rem;
+
+            &-item {
+                display: inline-block;
+                position: relative;
+
+                &:hover {
+                    color: v.$third-color;
+                    cursor: pointer;
+
+                    &:after {
+                        transform: scaleX(1)
+                    }
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -50%;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 4px;
+                    transform: scaleX(0);
+                    background-color: v.$first-color;
+                    transition: transform 1s;
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,0 +1,8 @@
+@use 'src/styles/vars' as v;
+
+.charity_section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background-color: v.$third-color;
+}

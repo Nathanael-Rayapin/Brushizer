@@ -1,0 +1,288 @@
+@use 'src/styles/vars' as v;
+
+.profile {
+    padding: 2.5rem 4rem 0;
+    height: 90vh;
+    overflow: auto;
+    &-wrapper {
+        display: flex;
+        gap: 2rem;
+        height: auto;
+    }
+}
+
+.profile_infos {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+
+    &_avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid v.$first-color;
+        margin-bottom: 1.2rem;
+        transition: all 0.5s ease;
+        img {
+             width: 100%;
+             border-radius: 50%;
+                &:hover {
+                    background-color: v.$fourth-color;
+                    cursor: pointer;
+                    -webkit-filter: brightness(90%);
+                    transition: all 0.5s ease;
+                    opacity: 0.5;
+                }
+        }
+    }
+
+    &_pseudo {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        &-text {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            .profile-artist-icon {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &_description {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.4rem;
+        font-weight: 200;
+        margin-bottom: 1rem;
+        .no-description {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        &-edit {
+            background-color: v.$third-color;
+            border: 1px solid v.$first-color;
+            border-radius: 0.3rem;
+            text-align: center;
+        }
+    }
+    &_buttons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 2rem;
+        gap: 1rem;
+        &-follow {
+            padding: 0.75rem 1.75rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background-color: v.$fourth-color;
+            color: v.$first-color;
+            border-radius: 0.5rem;
+            border: 2px solid v.$second-color;
+            transition: background-color 0.9s ease 0s, border 0.9s ease 0s,
+                transform 0.9s ease 0s;
+
+            &:hover {
+                color: v.$first-color;
+                border: 2px solid v.$first-color;
+                box-shadow: v.$third-color 1px 1px 30px 2px;
+                background: v.$fourth-color repeat scroll 0% 0%;
+                border: 2px dashed v.$first-color;
+                transition: background-color 0.9s ease 0s, border 0.9s ease 0s;
+            }
+        }
+        &-artwork {
+            padding: 0.75rem 1rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background-color: v.$first-color;
+            color: v.$fourth-color;
+            border-radius: 0.5rem;
+            border: 2px solid v.$first-color;
+            transition: background-color 0.9s ease 0s, border 0.9s ease 0s,
+                transform 0.9s ease 0s;
+
+            &:hover {
+                color: v.$first-color;
+                border: 2px solid v.$second-color;
+                box-shadow: v.$third-color 1px 1px 30px 2px;
+                background: v.$second-color repeat scroll 0% 0%;
+                border: 2px dashed v.$first-color;
+                transition: background-color 0.9s ease 0s, border 0.9s ease 0s;
+            }
+        }
+    }
+    &_feed {
+        background-color: v.$bonus-color;
+        width: 100%;
+        height: 450px;
+        border-top-left-radius: 1.2rem;
+        border-top-right-radius: 1.2rem;
+    }
+}
+
+.profile_gallery {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+
+    &_first {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        border-radius: 1.2rem;
+        transition: all 1s ease;
+            :hover {
+                cursor: pointer;
+                filter: grayscale(50%);
+                -webkit-filter: brightness(40%);
+                transition: all 1s ease;
+        }
+
+        img {
+            border-radius: 1.2rem;
+            
+        }
+    }
+}
+
+.loading {
+    display: grid;
+    place-items: center;
+}
+@media screen and (max-width: 1600px) {
+    .profile {
+        &_infos {
+            align-items: center;
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+
+    .profile {
+        padding: 8rem 4rem 0;
+        height: 100vh;
+    }
+
+    .profile_infos {
+        width: 50%;
+    }
+
+    .profile_gallery {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: flex-start;
+
+        &_first {
+            width: 40%;
+        }
+
+        &_second {
+            width: 48%;
+        }
+    
+        &_third {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .profile {
+        padding: 10rem 3rem 0;
+        height: 100vh;
+            &-wrapper {
+                display: flex;
+                gap: 0.1rem;
+                height: auto;
+            }
+    }
+    .profile_infos {
+        width: 50%;
+    }
+
+    .profile_gallery {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+
+        &_first {
+            width: 100%;
+            align-items: center;
+            img {
+                width: 100%;
+            }
+            &-test {
+                background-color: v.$third-color;
+                width: 80%;
+                height: 300px;
+                border-radius: 1.2rem;
+            }
+            &-test2 {
+                background-color: v.$third-color;
+                width: 80%;
+                height: 400px;
+                border-radius: 1.2rem;
+            }
+        }
+
+        &_second {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 778px) {
+    .profile {
+        padding: 10rem 3rem 0;
+        height: 100vh;
+            &-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.1rem;
+                height: auto;
+            }
+    }
+    .profile_infos {
+        width: 100%;
+        align-items: center;
+    }
+
+    .profile_gallery {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &_first {
+            width: 100%;
+            align-items: center;
+            &-test {
+                background-color: v.$third-color;
+                width: 80%;
+                height: 300px;
+                border-radius: 1.2rem;
+            }
+            &-test2 {
+                background-color: v.$third-color;
+                width: 80%;
+                height: 400px;
+                border-radius: 1.2rem;
+            }
+        }
+
+        &_second {
+            display: none;
+        }
+    }
+}

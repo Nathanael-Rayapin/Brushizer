@@ -1,0 +1,49 @@
+@use 'src/styles/vars' as v;
+
+.contact_section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    background-color: v.$third-color;
+
+    &_title {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 600;
+        padding: 0 0 3rem;
+
+        span {
+            background-color: v.$second-color;
+            padding-right: 1rem;
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+.button-submit-contact {
+    color: v.$fourth-color;
+    box-shadow: v.$fourth-color 1px 1px 80px 2px;
+    background: v.$first-color repeat scroll 0% 0%;
+    transition: all 0.5s ease 0s;
+        &:hover {
+            color: v.$fourth-color;
+            box-shadow: v.$fourth-color 1px 1px 80px 2px;
+            background: v.$second-color repeat scroll 0% 0% !important;
+            transition: all 0.5s ease 0s;
+        }
+}
+
+.textarea-description {
+    color: v.$first-color;
+    font-weight: 300;
+    font-family: inherit;
+    border: none;
+    resize: none;
+}
+
+@media screen and (max-width: 1199px) { 
+    .contact_section {
+        
+        padding: 10rem 2rem;
+    }
+}

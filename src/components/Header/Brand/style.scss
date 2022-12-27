@@ -1,0 +1,27 @@
+@use 'src/styles/vars' as v;
+
+.header_brand {
+
+    &--shown {
+        font-size: 2rem;
+        cursor: pointer;
+        font-weight: 800;
+        letter-spacing: 0.1rem;
+    }
+    &--hidden {
+        display: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+        &--shown {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media screen and (min-width: 1400px) {
+        &--shown {
+            font-size: 2.6rem;
+        }
+    }
+}
+

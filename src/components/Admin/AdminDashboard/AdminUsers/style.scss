@@ -1,0 +1,52 @@
+@use 'src/styles/vars' as v;
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    border: 1px solid v.$first-color;
+    padding: 0.8rem;
+    background-color: v.$fourth-color;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  th {
+    text-align: center;
+    background-color: v.$second-color !important;
+    color: v.$first-color !important;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+.user-row {
+  &-options{
+    font-size: 30px;
+    text-align: center;
+    &-delete {
+    color: rgb(177, 81, 81);
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+    &-edit {
+      color: black;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+  @media screen and (max-width: 768px) {
+    table {
+        display: inline-block;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+  }

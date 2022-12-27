@@ -1,0 +1,27 @@
+@use 'src/styles/vars' as v;
+
+
+.create_modal {
+    &-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    &-header, &-footer {
+        background-color: v.$second-color !important;
+    }
+    &-content {
+        background-color: v.$third-color !important;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    #create_modal-content {
+        padding-top: 8rem !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #create_modal-content {
+        padding-top: 8rem !important;
+    }
+}

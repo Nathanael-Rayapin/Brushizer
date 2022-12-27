@@ -1,0 +1,18 @@
+@use 'src/styles/vars' as v;
+
+.filter_container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    background-color: v.$third-color;
+}
+
+.filter_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: v.$second-color;
+    border-radius: 1.2rem;
+    overflow: hidden;
+
+}

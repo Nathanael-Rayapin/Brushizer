@@ -1,0 +1,11 @@
+@use 'src/styles/vars' as v;
+
+
+.textarea-description {
+    background-color: transparent;
+    color: v.$first-color;
+    font-weight: 300;
+    font-family: inherit;
+    border: none;
+    resize: none;
+}

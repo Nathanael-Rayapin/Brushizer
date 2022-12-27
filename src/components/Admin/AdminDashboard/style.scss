@@ -1,0 +1,24 @@
+@use 'src/styles/vars' as v;
+
+.A-Dashboard {
+    background-color: v.$fourth-color;
+    padding: 1rem 1rem 5rem;
+    min-height: 100vh;
+    height: fit-content;
+        &-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.5rem;
+            font-weight: 800;
+            padding: 2rem 0 2.5rem;
+            text-underline-offset: 1rem;
+            background-color: v.$fourth-color;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .A-Dashboard {
+        padding: 7rem 0;
+    }
+}

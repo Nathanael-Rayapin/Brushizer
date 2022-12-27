@@ -1,0 +1,18 @@
+@use 'src/styles/vars' as v;
+
+
+.delete_account {
+    display: flex !important;
+    flex-direction: column !important;
+    &-header {
+        margin-bottom: 1rem !important;
+        position: relative !important;
+    }
+    &-content {
+        text-align: center;
+    }
+    &-options {
+        display: flex;
+        justify-content: center;
+    }
+}

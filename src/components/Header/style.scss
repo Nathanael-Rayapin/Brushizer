@@ -1,0 +1,52 @@
+@use 'src/styles/vars' as v;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    background-color: v.$second-color;
+    padding: 1rem 1.2rem;
+    height: 14vh;
+    border-bottom: 2px solid v.$first-color;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+
+
+    @media screen and (min-width: 992px) {
+        justify-content: flex-start;
+    }
+
+    &_right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+
+        @media screen and (min-width: 1200px) {
+            margin-left: 0.5rem;
+        }
+
+        &--active {
+            justify-content: space-between;
+
+            @media screen and (min-width: 1200px) {
+                &--active {
+                    justify-content: space-around;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .header {
+        height: 10vh;
+        position: relative;
+        z-index: 1;
+        padding: 0 2rem;
+        border-bottom: 0;
+    }
+    
+}

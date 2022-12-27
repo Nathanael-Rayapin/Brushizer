@@ -1,0 +1,56 @@
+@use 'src/styles/vars' as v;
+
+.search {
+    color: v.$first-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &--active {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        /* Responsive > 1200px */
+        @media screen and (min-width: 1200px) {
+            width: 20%;
+        }
+
+        @media screen and (min-width: 1350px) {
+            width: 30%;
+        }
+
+        @media screen and (min-width: 1600px) {
+            width: 40%;
+        }
+    }
+
+    &-form {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    &_input {
+        width: 70%;
+        padding: 0.9rem;
+        margin-left: 4%;
+        background-color: v.$third-color;
+        border-radius: 10px;
+        border-style: none;
+        font-family: 'Fira Sans', sans-serif;
+        font-size: 1rem;
+        color: v.$first-color;
+
+        /* Responsive > 1200px */
+        @media screen and (min-width: 1200px) {
+            margin-left: 0.25%;
+        }
+
+        &::placeholder {
+            color: v.$first-color;
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@use 'src/styles/vars' as v;
+
+.burger-btn {
+    color: v.$first-color;
+    cursor: pointer;
+    @media screen and (min-width: 1200px) {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    i.big.icon {
+        display: none;
+    }
+}

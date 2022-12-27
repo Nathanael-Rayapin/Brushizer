@@ -1,0 +1,77 @@
+@use 'src/styles/vars' as v;
+
+
+.choice_wrapper {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    h3 {
+        font-size: 2rem;
+        text-underline-offset: 0.4rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .choice-option {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        button {
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem;
+            background-color: transparent;
+        }
+        i {
+            color: v.$fourth-color;
+            opacity: 0.5;
+            font-size: 5em;
+            transition: background-color 0.5s ease 0s, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            &:hover {
+                opacity: 1;
+                transform: scale(1.1);
+                transition: background-color 0.5s ease 0s, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+            &:active {
+                background-color: v.$first-color;
+                color: v.$fourth-color;
+                box-shadow: v.$third-color 1px 1px 40px 2px;
+                transition: background-color 0.5s ease 0s, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            }
+        }
+    }
+
+}
+
+.divider-user {
+    height: 100%;
+    width: 1px;
+    background-color: v.$third-color;
+}
+
+.relaxed {
+    padding: 2rem !important;
+    text-align: center;
+}
+
+.choice-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .choice_wrapper {
+        flex-direction: column;
+    }
+    .choice-user {
+        border-bottom: 1px solid v.$third-color;
+        padding-bottom: 1.6rem;
+    }
+    .choice-artist {
+        padding-top: 0.2rem;
+    }
+    .divider-user {
+        display: none;
+    }
+}

@@ -1,0 +1,76 @@
+@use 'src/styles/vars' as v;
+
+.charity_head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &_title {
+        font-size: 12rem;
+        font-weight: 900;
+        color: v.$second-color;
+        -webkit-text-stroke: 3px v.$fourth-color;
+
+    }
+    &_img {
+        margin-right: 5rem;
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 1200px) { 
+    .charity_head {
+        padding-top: 16vh;
+        padding-bottom: 1rem;
+        &_title {
+            font-size: 12rem;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) { 
+    .charity_head {
+        &_title {
+            font-size: 10rem;
+        }
+        &_img {
+            margin-right: 1rem;
+            width: 60vw;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) { 
+    .charity_head {
+        &_title {
+            font-size: 8rem;
+        }
+        
+    }
+}
+
+@media screen and (max-width: 600px) { 
+    .charity_head {
+        justify-content: center;
+        &_title {
+            font-size: 7rem;
+            text-align: center;
+        }
+        &_img {
+            display: none;
+        }
+        
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .charity_head {
+        
+        &_title {
+            font-size: 5rem;
+        }
+        &_img {
+            display: none;
+        }
+        
+    }
+}

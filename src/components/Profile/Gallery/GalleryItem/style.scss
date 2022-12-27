@@ -1,0 +1,49 @@
+@use 'src/styles/vars' as v;
+
+
+.profile_gallery_first {
+    position: relative;
+    img {
+        border-radius: 1rem;
+    }
+    .gallery-edit-text {
+        visibility: hidden;
+        position: absolute;
+        margin-left: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.3rem;
+        color: wheat;
+    }
+     &:hover > .gallery-edit-text {
+        visibility: visible;
+    }
+}
+
+.modal-img-preview {
+    border-radius: 1rem;
+}
+
+.edit_modal {
+    &-header, &-footer {
+        background-color: v.$second-color !important;
+    }
+    &-content {
+        background-color: v.$third-color !important;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .edit_modal {
+        &-content {
+            padding-top: 8rem !important;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #edit_modal-content {
+        padding-top: 8rem !important;
+    }
+}

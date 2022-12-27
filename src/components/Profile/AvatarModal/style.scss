@@ -1,0 +1,42 @@
+@use 'src/styles/vars' as v;
+
+
+.avatar_modal-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.avatar_gallery {
+    width: 90%;
+    margin: auto;
+    &_container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        &-item {
+            width: 100px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    img {
+        width: 100%;
+
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .create_modal {
+        & #avatar_modal-main {
+             padding-top: 8rem !important;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #avatar_modal-main {
+        padding-top: 8rem !important;
+    }
+}

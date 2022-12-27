@@ -1,0 +1,41 @@
+@use 'src/styles/vars' as v;
+
+.error_message-create {
+    margin: 1rem 0;
+    width: 60%;
+    padding: 1rem;
+    background-color: #FFE8E6;
+    border: 1px solid #DB2828;
+
+    &-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #DB2828;
+    }
+    
+    &-text {
+        padding-top: 0.5rem;
+        font-size: 1.1rem;
+        color: #a23f3fd5;
+    }
+}
+
+.success_message-create {
+    margin: 1rem 0;
+    width: 60%;
+    padding: 1rem;
+    background-color: #c9eab3;
+    border: 1px solid #29822d;
+
+    &-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #29822d;
+    }
+    
+    &-text {
+        padding-top: 0.5rem;
+        font-size: 1.1rem;
+        color: #3f9443;
+    }
+}
