@@ -75,12 +75,15 @@
     font-weight: 800;
     width: fit-content;
     margin-left: 7rem;
+    transition: all 0.75s ease 0s;
+    border-radius: 1.2rem;
+
     &:hover {
         transform: translateX(-20px);
         color: v.$first-color;
         box-shadow: v.$third-color 1px 1px 80px 2px;
         background: v.$third-color repeat scroll 0% 0%;
-        transition: all 0.5s ease 0s;
+        transition: all 0.75s ease 0s;
     }
 }
 
