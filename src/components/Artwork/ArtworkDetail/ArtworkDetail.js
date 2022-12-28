@@ -47,76 +47,77 @@ function ArtworkDetail({ artwork }) {
 
     return (
         <>
+            <div className='artwork_informations'>
+                <h5 ref={containerRef} className='artwork_informations_background'>Brushizer</h5>
 
-            <h5 ref={containerRef} className='artwork_section_background'>Brushizer</h5>
+                <button className='artwork_informations--prev-btn'>
+                    <Icon name='chevron left' size='large' className='chevron-left'></Icon></button>
 
-            <button className='artwork_section_prev-btn'>
-                <Icon name='chevron left' size='large' className='chevron-left'></Icon></button>
-
-            <div className='artwork'>
-                <h2 className='artwork_title'>{artwork.name}</h2>
-                <div className='artwork_wrapper'>
-                    <div className='artwork_wrapper_image'>
-                        <div className='artwork_wrapper_image-img'>
-                            <img src={`/assets/artworks/${artwork.image}`} alt='artwork preview'></img>
+                <div className='artwork'>
+                    <h2 className='artwork_title'>{artwork.name}</h2>
+                    <div className='artwork_wrapper'>
+                        <div className='artwork_wrapper_image'>
+                            <div className='artwork_wrapper_image-img'>
+                                <img src={`/assets/artworks/${artwork.image}`} alt='artwork preview'></img>
+                            </div>
+                            <div className='artwork_wrapper_image_buttons'>
+                                <button className='artwork_wrapper_image_buttons-bid'>PLACE A BID</button>
+                                <button className='artwork_wrapper_image_buttons-buy'>BUY NOW</button>
+                            </div>
                         </div>
-                        <div className='artwork_wrapper_image_buttons'>
-                            <button className='artwork_wrapper_image_buttons-bid'>PLACE A BID</button>
-                            <button className='artwork_wrapper_image_buttons-buy'>BUY NOW</button>
-                        </div>
-                    </div>
 
-                    <div className='artwork_detail'>
-                        <div className='artwork_detail_content'>
-                            <div className='artwork_infos'>
-                                <div className='artwork_infos-artist'>{artwork.artist_name}</div>
-                                <div className='artwork_infos-collection'>Brushizer</div>
-                            </div>
-                            <div className='artwork_prices'>
-                                <img src={`/assets/logos/solanaLogoMark.svg`}
-                                    alt='Solana logo'
-                                    className='solana-logo' />
-                                <div className='artwork_prices-crypto'>
-                                    {artwork.price_sol} SOL
+                        <div className='artwork_detail'>
+                            <div className='artwork_detail_content'>
+                                <div className='artwork_infos'>
+                                    <div className='artwork_infos-artist'>{artwork.artist_name}</div>
+                                    <div className='artwork_infos-collection'>Brushizer</div>
                                 </div>
-                                <div className='artwork_prices-currency'>
-                                    ($ {artwork.price_usd})
-                                </div>
-                            </div>
-                            <div className='artwork_description info-header'>
-                                <div className='artwork_description-title'>Description</div>
-                                <div className='artwork_description-content'>
-                                    {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                    nisi ut aliquip ex ea commodo consequat. */}
-                                    {artwork.description}
-                                </div>
-                            </div>
-                            <div className='artwork_attributes info-header'>
-                                <div className='artwork_attributes-title'>Attributes</div>
-                                <div className='artwork_attributes_wrapper'>
-                                    <div className='attribute'>
-                                        <p className='attribute-name'>Background</p>
-                                        <p className='attribute-value'>{artwork.attributes.background}</p>
+                                <div className='artwork_prices'>
+                                    <img src={`/assets/logos/solanaLogoMark.svg`}
+                                        alt='Solana logo'
+                                        className='solana-logo' />
+                                    <div className='artwork_prices-crypto'>
+                                        {artwork.price_sol} SOL
                                     </div>
-                                    <div className='attribute'>
-                                        <p className='attribute-name'>Shape</p>
-                                        <p className='attribute-value'>{artwork.attributes.shape}</p>
+                                    <div className='artwork_prices-currency'>
+                                        ($ {artwork.price_usd})
                                     </div>
-                                    <div className='attribute'>
-                                        <p className='attribute-name'>Shape-color</p>
-                                        <p className='attribute-value'>{artwork.attributes.shape_color}</p>
+                                </div>
+                                <div className='artwork_description info-header'>
+                                    <div className='artwork_description-title'>Description</div>
+                                    <div className='artwork_description-content'>
+                                        {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                        nisi ut aliquip ex ea commodo consequat. */}
+                                        {artwork.description}
+                                    </div>
+                                </div>
+                                <div className='artwork_attributes info-header'>
+                                    <div className='artwork_attributes-title'>Attributes</div>
+                                    <div className='artwork_attributes_wrapper'>
+                                        <div className='attribute'>
+                                            <p className='attribute-name'>Background</p>
+                                            <p className='attribute-value'>{artwork.attributes.background}</p>
+                                        </div>
+                                        <div className='attribute'>
+                                            <p className='attribute-name'>Shape</p>
+                                            <p className='attribute-value'>{artwork.attributes.shape}</p>
+                                        </div>
+                                        <div className='attribute'>
+                                            <p className='attribute-name'>Shape-color</p>
+                                            <p className='attribute-value'>{artwork.attributes.shape_color}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <button className='artwork_section_next-btn'>
+                <button className='artwork_informations--next-btn'>
                 <Icon name='chevron right' size='large' className='chevron-right'></Icon></button>
+            </div>
         </>
     );
 }
