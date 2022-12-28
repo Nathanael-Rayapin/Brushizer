@@ -5,15 +5,15 @@ import { Dropdown } from 'semantic-ui-react';
 import './style.scss'
 
 function LastSale() {
-    const isDesktop = useMediaQuery({
-        query: '(min-width: 1200px)'
+    const bigWidth = useMediaQuery({
+        query: '(min-width: 1800px)'
     });
     const isWide = useMediaQuery({
         query: '(min-width: 1400px)'
     });
-    // const isMedium = useMediaQuery({
-    //     query: '(min-width: 768px)'
-    // });
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 1200px)'
+    });
     const isMediumXL = useMediaQuery({
         query: '(min-width: 992px)'
     });

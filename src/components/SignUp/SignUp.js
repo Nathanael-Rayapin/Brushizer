@@ -49,7 +49,7 @@ function SignUp() {
             <div className='signup-wrapper'>
                 {userType !== null && <button onClick={handleBack} className='back-btn'><Icon name='arrow left' />Back</button>}
                 <h2 className='signup-wrapper-title'>
-                    Create Account
+                    Create an Account
                 </h2>
                 {userType === null && <UserChoice handleUserChoice={handleUserChoice} />}
                 {userType !== null && <SignUpForm
