@@ -24,3 +24,23 @@ body {
 #root {
     height: 100%;
 }
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+
+body::-webkit-scrollbar {
+    width: 30px; /* width of the entire scrollbar */
+    scroll-behavior: smooth;
+  }
+  
+body::-webkit-scrollbar-track {
+    background: v.$second-color; /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: v.$third-color; /* color of the scroll thumb */
+    border-radius: 30px; /* roundness of the scroll thumb */
+    border: 8px solid v.$second-color; /* creates padding around scroll thumb */
+}
