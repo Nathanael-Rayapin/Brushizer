@@ -16,7 +16,7 @@ function Collections() {
                 <div className='collections_list'>
 
                     <div className='collections_list_item'>
-                        <div className='collections_list_item_artist'>BRUSHIZERRRRRRRRRRR
+                        <div className='collections_list_item_artist'>BRUSHIZER
                         </div>
                         <div className='collections_list_item_images'>
                             <img className='collections_list_item_images-img001' src='./assets/artworks/001.png' alt='artwork' />

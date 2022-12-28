@@ -7,6 +7,7 @@
             display: flex;
             background-color: v.$third-color;
             padding: 3rem 2rem 0rem;
+            gap: 1rem;
         }
 
         &_infos {
@@ -14,6 +15,7 @@
             justify-content: space-between;
             width: 100%;
             gap: 2rem;
+            border: 2px solid v.$fourth-color;
             align-items: flex-end;
             background: linear-gradient(45deg, v.$second-color, v.$third-color);
             border-radius: 1.2rem;
@@ -148,6 +150,33 @@
 
                         
                 }
+        }
+
+        &_description {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 40vw;
+            padding: 1rem 2rem;
+            border-radius: 1.2rem;
+            background: v.$first-color;
+
+            &--title {
+                -webkit-text-stroke: 0.1rem v.$third-color;
+                color: transparent;
+                font-weight: 900;
+                padding-bottom: 0.8rem;
+                font-size: 2.4rem;
+                border-bottom: 2px solid v.$third-color;
+            }
+
+            &--text {
+                font-weight: 600;
+                font-size: 1rem;
+                line-height: 1.4rem;
+                text-align: justify;
+                color: v.$third-color;
+            }
         }
 
         

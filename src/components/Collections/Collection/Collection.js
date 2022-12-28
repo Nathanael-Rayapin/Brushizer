@@ -81,6 +81,15 @@ function Collection() {
                             </div>
                         </div>
                     </div>
+                    <div className='collection_section_description'>
+                            <h3 className='collection_section_description--title'>
+                                Description
+                            </h3>
+                            <p className='collection_section_description--text'>
+                                Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+                                Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+                            </p>
+                    </div>
                 </div>
 
                 <Filter />
