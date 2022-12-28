@@ -160,15 +160,15 @@
             padding: 1rem 2rem;
             border-radius: 1.2rem;
             border: 4px solid v.$second-color;
-            background: v.$first-color;
+            background: v.$fourth-color;
 
             &--title {
-                -webkit-text-stroke: 0.1rem v.$third-color;
+                -webkit-text-stroke: 0.1rem v.$first-color;
                 color: transparent;
                 font-weight: 900;
                 padding-bottom: 0.8rem;
                 font-size: 2.4rem;
-                border-bottom: 2px solid v.$third-color;
+                border-bottom: 2px solid v.$second-color;
             }
 
             &--text {
@@ -176,7 +176,7 @@
                 font-size: 1rem;
                 line-height: 1.4rem;
                 text-align: justify;
-                color: v.$third-color;
+                color: v.$first-color;
             }
         }
 
