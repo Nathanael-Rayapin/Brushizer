@@ -3,6 +3,8 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ArtworkNotFound from './ArtworkNotFound/ArtworkNotFound';
 import ArtworkDetail from './ArtworkDetail/ArtworkDetail';
+import ArtworkMore from './ArtworkMore/ArtworkMore'
+import ArtworkDiscover from './ArtworkDiscover/ArtworkDiscover';
 
 /* DATA / MODULES */
 import artworks from '../../data/artworks.json';
@@ -47,6 +49,8 @@ function Artwork() {
                 </div>}
                 {artwork && <ArtworkDetail artwork={artwork} />}
                 {artwork === undefined && <ArtworkNotFound />}
+                <ArtworkMore />
+                <ArtworkDiscover />
             </section>
             <Footer />
         </>

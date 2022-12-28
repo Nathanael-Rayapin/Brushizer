@@ -2,11 +2,13 @@
 
 .artwork_section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 4.5rem 0;
     background-color: v.$third-color;
     position: relative;
+    gap: 6rem;
 }
 
 .loader-wrapper {
