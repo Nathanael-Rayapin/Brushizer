@@ -17,3 +17,9 @@
         text-align: center;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .loader-wrapper{
+        padding-top: 8vh;
+    }
+}

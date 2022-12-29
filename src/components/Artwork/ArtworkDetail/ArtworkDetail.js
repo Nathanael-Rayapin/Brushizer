@@ -51,7 +51,7 @@ function ArtworkDetail({ artwork }) {
                 <h5 ref={containerRef} className='artwork_informations_background'>Brushizer</h5>
 
                 <button className='artwork_informations--prev-btn'>
-                    <Icon name='chevron left' size='large' className='chevron-left'></Icon></button>
+                    <Icon name='chevron left' size='large' className='chevron-left'/></button>
 
                 <div className='artwork'>
                     <h2 className='artwork_title'>{artwork.name}</h2>
@@ -72,24 +72,29 @@ function ArtworkDetail({ artwork }) {
                                     <div className='artwork_infos-artist'>{artwork.artist_name}</div>
                                     <div className='artwork_infos-collection'>Brushizer</div>
                                 </div>
-                                <div className='artwork_prices'>
-                                    <img src={`/assets/logos/solanaLogoMark.svg`}
+                                <div className='artwork_scope'>
+                                    <div className='artwork_scope_prices'>
+                                        <img src={`/assets/logos/solanaLogoMark.svg`}
                                         alt='Solana logo'
                                         className='solana-logo' />
-                                    <div className='artwork_prices-crypto'>
-                                        {artwork.price_sol} SOL
+                                        <div className='artwork_scope_prices-crypto'>
+                                            {artwork.price_sol} SOL
+                                        </div>
+                                        <div className='artwork_scope_prices-currency'>
+                                            ($ {artwork.price_usd})
+                                        </div>
+                                        <Icon name='check circle' size='large' className='chevron-left'/>
                                     </div>
-                                    <div className='artwork_prices-currency'>
-                                        ($ {artwork.price_usd})
+                                    
+                                    <div className='artwork_scope_social'>
+                                        <Icon name='heart outline' size='large' className='chevron-left'/>
+                                        <Icon name='share alternate' size='large' className='chevron-left'/>
                                     </div>
+                                    
                                 </div>
                                 <div className='artwork_description info-header'>
                                     <div className='artwork_description-title'>Description</div>
                                     <div className='artwork_description-content'>
-                                        {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                                        nisi ut aliquip ex ea commodo consequat. */}
                                         {artwork.description}
                                     </div>
                                 </div>

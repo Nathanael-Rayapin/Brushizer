@@ -17,7 +17,6 @@
         -webkit-text-stroke: 0.2rem v.$fourth-color;
         color: transparent;
         z-index: 1;
-
     }
 
     &--prev-btn {
@@ -212,6 +211,12 @@
                         text-transform: uppercase;
                         background-color: v.$second-color;
                         border-radius: 1.1rem 0 0 1.1rem;
+                        transition: color 0.5s ease 0s;
+
+                        &:hover {
+                            transition: color 0.5s ease 0s;
+                            color: v.$first-color;
+                        }
                     }
 
                     &-collection {
@@ -223,35 +228,54 @@
                         color: v.$second-color;
                         text-transform: uppercase;
                         border-radius: 1.2rem;
+                        transition: color 0.5s ease 0s;
+
+                        &:hover {
+                            transition: color 0.5s ease 0s;
+                            color: v.$first-color;
+                        }
                     }
                 }
 
-                .artwork_prices {
+                .artwork_scope {
                     display: flex;
+                    justify-content: space-between;
                     align-items: center;
-                    gap: 0.75rem;
                     padding: 1rem 2rem;
                     background-color: v.$fourth-color;
                     font-weight: 900;
 
-                    .solana-logo {
-                        width: 2rem;
-                        height: 3rem;
-                        filter: grayscale(1);
+                    &_prices {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.4rem;
+                        background-color: v.$fourth-color;
+                        font-weight: 900;
+
+                        .solana-logo {
+                            width: 1.75rem;
+                            height: 2.75rem;
+                            filter: grayscale(1);
+                        }
+
+                        &-crypto {
+                            color: v.$second-color;
+                            font-size: 1.75rem;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                        }
+
+                        &-currency {
+                            font-size: 1.3rem;
+                            font-weight: 800;
+                            color: v.$first-color;
+                            text-transform: uppercase;
+                        }
                     }
 
-                    &-crypto {
-                        color: v.$second-color;
-                        font-size: 2rem;
-                        font-weight: 800;
-                        text-transform: uppercase;
-                    }
-
-                    &-currency {
-                        font-size: 1.3rem;
-                        font-weight: 800;
-                        color: v.$first-color;
-                        text-transform: uppercase;
+                    &_social{
+                        display: flex;
+                        gap: 0.2rem;
                     }
                 }
 
@@ -292,7 +316,7 @@
                     }
 
                     &_wrapper {
-                        padding: 1.75rem 0.5rem;
+                        padding: 1.75rem 0rem;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: flex-start;
@@ -379,25 +403,25 @@
     .artwork_informations {
         .artwork {
             width: 90%;
-    
+
             &_wrapper {
                 &_image {
                     &-img {
                         width: 100%;
-    
+
                         img {
                             width: 100%;
                         }
                     }
-    
+
                     &_buttons {
                         padding: 1rem 1.5rem;
-    
+
                         &-bid {
                             padding: 1rem 0.5rem;
                             font-size: 1.1rem;
                         }
-    
+
                         &-buy {
                             padding: 1rem 0.5rem;
                             font-size: 1.1rem;
@@ -407,22 +431,25 @@
             }
         }
     }
-    
+
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     .artwork_informations {
+        padding-top: 15vh;
+
+        &_background {
+            display: none;
+        }
+
         .artwork {
             &_wrapper {
                 display: flex;
                 flex-direction: column;
-
                 &_image {
                     width: 100%;
-
                     &-img {
                         width: 70%;
-
                         img {
                             width: 100%;
                         }
@@ -430,7 +457,6 @@
 
                     &_buttons {
                         padding: 1.5rem 2rem;
-
                         &-bid {
                             padding: 1.2rem 2rem;
                             font-size: 1.4rem;
@@ -450,23 +476,24 @@
             }
         }
     }
-    
+
 }
 
 @media screen and (max-width: 892px) {
     .artwork_informations {
         .artwork {
             &_wrapper {
-    
                 &_image {
+                    padding: 1rem 2rem 0rem;
+
                     &_buttons {
                         padding: 1rem 1.5rem;
-    
+
                         &-bid {
                             padding: 1rem 1.8rem;
                             font-size: 1.2rem;
                         }
-    
+
                         &-buy {
                             padding: 1rem 1.8rem;
                             font-size: 1.2rem;
@@ -474,36 +501,32 @@
                     }
                 }
             }
-    
+
             &_detail {
                 width: 100%;
                 padding-left: 2rem;
             }
         }
     }
-    
+
 }
 
 @media screen and (max-width: 800px) {
     .artwork_informations {
+        &--prev-btn {
+            display: none;
+        }
+
+        &--next-btn {
+            display: none;
+        }
         .artwork {
             width: 100%;
             border: none;
             padding: 1rem 0;
-    
+
             &_detail {
                 width: 100%;
-            }
-        }
-    
-    
-        .artwork_section {
-            &_prev-btn {
-                display: none;
-            }
-    
-            &_next-btn {
-                display: none;
             }
         }
     }
@@ -513,23 +536,23 @@
     .artwork_informations {
         .artwork {
             width: 100%;
-    
+
             &_title {
                 font-size: 3.8rem;
             }
-    
+
             &_wrapper {
                 width: 100%;
-    
+
                 &_image {
                     &_buttons {
                         gap: 1rem;
-    
+
                         &-bid {
                             padding: 1rem 1.5rem;
                             font-size: 1.2rem;
                         }
-    
+
                         &-buy {
                             padding: 1rem 1.5rem;
                             font-size: 1.2rem;
@@ -537,53 +560,72 @@
                     }
                 }
             }
-    
+
             &_detail {
                 width: 100%;
-    
+
                 &_content {
                     &>* {
                         border-radius: 1.2rem;
                     }
-    
+
+
+
                     .artwork_infos {
                         display: flex;
                         align-items: center;
                         font-size: 1.3rem;
                         width: 100%;
                         text-transform: uppercase;
-    
-    
+
+
                         &-collection {
                             font-size: 1.5rem;
                             border-top-right-radius: 1.2rem;
                             border-bottom-right-radius: 1.2rem;
                         }
-    
+
                         &-artist {
                             font-size: 1.5rem;
                         }
                     }
-    
-                    .artwork_prices {
-                        padding: 1rem 0.5rem;
-    
-                        &-crypto {
+
+                    .artwork_scope {
+                        padding: 0.5rem 1rem;
+                        
+                        &_social{
+                            flex-direction: column;
+                        }
+
+                        &_prices {
+                            &-crypto {
                             font-size: 1.75rem;
+                            }
+                        } 
+                    }
+
+                    .artwork_description {
+                        padding: 1rem 1rem;
+                        &-title {
+                            font-size: 2rem;
+                        }
+                        &-content {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    .artwork_attributes {
+                        padding: 1rem 1rem;
+                        &-title {
+                            font-size: 2rem;
                         }
                     }
                 }
+
+                
+
             }
-        }
-        .artwork_section {
-            &_prev-btn {
-                display: none;
-            }
-    
-            &_next-btn {
-                display: none;
-            }
+
         }
     }
-    
 }

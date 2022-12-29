@@ -28,12 +28,12 @@ function App() {
     <div className="App">
       <AnimatedCursor
       innerSize={10}
-      outerSize={50}
+      outerSize={40}
       color='44, 42, 43'
-      outerAlpha={0.2}
-      innerScale={1}
-      outerScale={1.8}
-      trailingSpeed={1}
+      outerAlpha={0.4}
+      innerScale={0.8}
+      outerScale={0}
+      trailingSpeed={20}
       clickables={[
         'a',
         'input[type="text"]',
@@ -45,7 +45,9 @@ function App() {
         'select',
         'textarea',
         'button',
-        '.link'
+        '.link',
+        'button',
+        'input',
       ]}
     />
       <Routes>

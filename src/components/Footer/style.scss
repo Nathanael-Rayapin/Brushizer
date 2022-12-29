@@ -58,8 +58,16 @@
                 border: 2px solid v.$first-color;
                 border-radius: 50%;
                 padding: 0.3rem;
+                &:hover {
+                    background-color: v.$second-color;
+                    border: 2px solid v.$fourth-color;
+                }
                 &-i {
                     margin-left: 4px !important;
+                    color: v.$first-color !important;
+                    &:hover {
+                        color: v.$fourth-color !important;
+                    }
                 }
             } 
         }

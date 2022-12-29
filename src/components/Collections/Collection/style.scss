@@ -42,12 +42,31 @@
                                 font-weight: 900;
                                 text-transform: uppercase;
                                 color: v.$first-color;
+                                transition: color 0.5s ease 0s;
+                                &:hover {
+                                    color: v.$fourth-color;
+                                    transition: color 0.5s ease 0s;
+                                }
+
+                                i {
+                                    color: #e6c619 !important;
+                                }
+                                
                             }
                             &-artist {
                                 font-size: 2rem;
                                 font-weight: 400;
                                 text-transform: uppercase;
                                 color: v.$first-color;
+
+                                i {
+                                    color: #e6c619 !important;
+                                }
+
+                                &:hover {
+                                    color: v.$fourth-color;
+                                    transition: color 0.5s ease 0s;
+                                }
 
                                 span {
                                     font-size: 1.5rem;
