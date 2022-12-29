@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { useState } from 'react'
 import { Accordion, Menu } from 'semantic-ui-react';
 import { ShapeForm, BackgroundForm, ShapeColorForm } from './FormsLists/FormsLists';
+import { NavLink } from 'react-router-dom';
 
 import artworkImg from '../../../../../assets/001.png';
 import './style.scss'
@@ -53,6 +54,7 @@ function Attributes() {
         </Accordion>
       </div>
       <div className='filter_gallery'>
+      <NavLink to='/artwork/1'>
         <div className='filter_gallery_card'>
           <img className='filter_gallery_card_img' src={artworkImg} alt='artwork preview'></img>
           <div className='filter_gallery_card_wrapper'>
@@ -63,6 +65,7 @@ function Attributes() {
               <p className='filter_gallery_card_price--crypto'>25.17 SOL</p>
             </div>
         </div>
+        </NavLink>
       </div>
     </Fragment>
   )
