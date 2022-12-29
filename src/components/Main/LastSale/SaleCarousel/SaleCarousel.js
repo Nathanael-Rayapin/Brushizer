@@ -19,12 +19,14 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                     prevEl: '.btn-left',
                     nextEl: '.btn-right',
                 }}
-                // autoplay={{
-                //     delay: 0,
-                //     disableOnInteraction: false,
-                //     pauseOnMouseEnter: true,
-                //   }}
-                  breakpoints={{
+                keyboardControl= {true}
+                grabCursor={true}
+                autoplay={{
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                }}
+                breakpoints={{
                     1700: {
                         slidesPerView: 4,
                         spaceBetween: -5
@@ -39,10 +41,8 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                         spaceBetween: 60
                     }
                   }}
-                keyboardControl={true}
                 speed={3000}
                 loop={true}
-                grabCursor={true}
                 className='carousel_wrapper-content'
             >
                 {items.map((item, index) => (

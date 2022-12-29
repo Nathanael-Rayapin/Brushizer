@@ -19,7 +19,7 @@ function SaleCarouselItem({ item, isDesktop }) {
                     <div className='card_infos'>
                         {/* Bloc des informations de la card */}
                         <div className='card_infos_upper'>
-                            <span className='card_infos_upper-id'>{item.name}<Icon name='check circle' size='small' color='blue'></Icon></span>
+                            <span className='card_infos_upper-id'>{item.name} <Icon name='check circle' size='small' color='blue'></Icon></span>
                             <span className='card_infos_upper-likes'><Icon name='heart' color='red' size='small'></Icon>231</span>
                         </div>
                         <div className='card_infos_lower'>
