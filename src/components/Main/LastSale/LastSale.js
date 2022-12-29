@@ -5,9 +5,6 @@ import { Dropdown } from 'semantic-ui-react';
 import './style.scss'
 
 function LastSale() {
-    const bigWidth = useMediaQuery({
-        query: '(min-width: 1800px)'
-    });
     const isWide = useMediaQuery({
         query: '(min-width: 1400px)'
     });

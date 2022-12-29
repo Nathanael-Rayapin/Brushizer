@@ -1,5 +1,4 @@
 /* COMPONENTS */
-import { gsap } from 'gsap';
 import { useRef } from 'react';
 import './style.scss'
 
