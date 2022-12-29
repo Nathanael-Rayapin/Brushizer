@@ -180,6 +180,8 @@
             border-radius: 1.2rem;
             border: 4px solid v.$second-color;
             background: v.$fourth-color;
+            max-height: 300px;
+            max-width: 40vw;
 
             &--title {
                 -webkit-text-stroke: 0.1rem v.$first-color;
@@ -191,7 +193,7 @@
             }
 
             &--text {
-                font-weight: 600;
+                font-weight: 400;
                 font-size: 1rem;
                 line-height: 1.4rem;
                 text-align: justify;

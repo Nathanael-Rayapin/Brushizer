@@ -9,10 +9,8 @@
 
 .filter_wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: v.$second-color;
     border-radius: 1.2rem;
     overflow: hidden;
-
+    max-height: 100vh;
 }

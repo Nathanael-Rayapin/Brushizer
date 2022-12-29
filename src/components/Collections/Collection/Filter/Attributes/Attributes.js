@@ -1,55 +1,26 @@
 /* COMPONENTS */
+import { Fragment } from 'react';
 import { useState } from 'react'
-import { Accordion, Menu, Form } from 'semantic-ui-react'
+import { Accordion, Menu } from 'semantic-ui-react';
+import { ShapeForm, BackgroundForm, ShapeColorForm } from './FormsLists/FormsLists';
+
+import artworkImg from '../../../../../assets/001.png';
 import './style.scss'
-
-const ShapeForm = (
-  <Form>
-    <Form.Group grouped>
-      <Form.Checkbox label='001' name='size' value='001' />
-      <Form.Checkbox label='002' name='size' value='002' />
-      <Form.Checkbox label='003' name='size'value='003' />
-      <Form.Checkbox label='004' name='size' value='004' />
-    </Form.Group>
-  </Form>
-)
-
-const BackgroundForm = (
-    <Form>
-      <Form.Group grouped>
-        <Form.Checkbox label='Red' name='background' value='red' />
-        <Form.Checkbox label='Orange' name='background' value='orange' />
-        <Form.Checkbox label='Green' name='background' value='green' />
-        <Form.Checkbox label='Blue' name='background' value='blue' />
-      </Form.Group>
-    </Form>
-  )
-
-  const ShapeColorForm = (
-    <Form>
-      <Form.Group grouped>
-        <Form.Checkbox label='Red' name='shape-color' value='red' />
-        <Form.Checkbox label='Orange' name='shape-color' value='orange' />
-        <Form.Checkbox label='Green' name='shape-color' value='green' />
-        <Form.Checkbox label='Blue' name='shape-color' value='blue' />
-      </Form.Group>
-    </Form>
-  )
 
 function Attributes() {
 
     const [activeIndex, setActiveIndex] = useState(1)
   
-    const handleClick = (e, titleProps) => {
+    const handleClick = (event, titleProps) => {
     const { index } = titleProps
     const newIndex = activeIndex === index ? -1 : index
     setActiveIndex(newIndex)
 
     }
     return (
+      <Fragment>
         <div className='filter_attributes'>
-                
-            <Accordion as={Menu} vertical>
+            <Accordion className='filter_attributes_accordion' as={Menu} vertical>
                 <Menu.Item>
                 <Accordion.Title
                 active={activeIndex === 0}
@@ -81,6 +52,12 @@ function Attributes() {
                 </Menu.Item>
             </Accordion>
         </div>
+        <div className='filter_gallery'>
+          <div className='filter_gallery_card'>
+            <img className='filter_gallery_card_img' src={artworkImg} alt='artwork preview'></img>
+          </div>
+        </div>
+      </Fragment>
       )
 }   
 

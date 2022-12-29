@@ -1,50 +1,67 @@
+import {
+    Fragment,
+    useState
+} from 'react';
 import SaleCarousel from './SaleCarousel/SaleCarousel';
+import Filter from './Filter/Filter';
 import artworks from '../../../data/artworks.json';
-import { useMediaQuery } from 'react-responsive';
-import { Dropdown } from 'semantic-ui-react';
+import mediaQuery from './MediaQuery/MediaQuery';
 import './style.scss'
 
 function LastSale() {
-    const isWide = useMediaQuery({
-        query: '(min-width: 1400px)'
-    });
-    const isDesktop = useMediaQuery({
-        query: '(min-width: 1200px)'
-    });
-    const isMediumXL = useMediaQuery({
-        query: '(min-width: 992px)'
-    });
-    const lastSalesOptions = [
-        {
-            value: 'Daily', text: "Daily"
-        },
-        {
-            value: 'Weekly', text: "Weekly"
-        },
-        {
-            value: 'Monthly', text: "Monthly"
-        }];
-    return (
-        <>
-            <div className="wave-wrapper">
-                <img src="/assets/wave-top.svg" alt="Wave" />
-            </div>
-            <section className='last'>
-                <div className='last_header'>
-                    <div className='last_header-title'>
-                        <h3>Last <span className='sale-span'>Sale</span></h3>
-                    </div>
-                    <div className='last_header-options'>
-                        <Dropdown defaultValue={"Daily"} selection fluid options={lastSalesOptions} />
-                        <div className='last_header-options-seeall'>See all</div>
-                    </div>
-                </div>
-                <SaleCarousel
-                    items={artworks}
-                    isDesktop={isDesktop}
-                    slidesToShow={isDesktop ? (isWide ? 3 : 2) : (isMediumXL ? 2 : 1)} />
-            </section>
-        </>
+    const [filteredArtworks, setFilteredArtworks] = useState([...artworks]);
+    const [isAvailableArtworks, setIsAvailableArtworks] = useState(true);
+
+    const setArtworks = (Artworks) => {
+        setFilteredArtworks(Artworks);
+    };
+
+    const setAvailable = (isAvailable) => {
+        setIsAvailableArtworks(isAvailable);
+    };
+
+    return ( <
+        Fragment >
+        <
+        div className = "wave-wrapper" >
+        <
+        img src = "/assets/wave-top.svg"
+        alt = "Wave" / >
+        <
+        /div> <
+        section className = 'last' > {
+            /* Filter - Artworks */ } <
+        Filter onSetArtworks = {
+            setArtworks
+        }
+        onSetAvailable = {
+            setAvailable
+        }
+        /> {
+            /* Available for this Date */ } {
+            <
+            SaleCarousel
+            items = {
+                filteredArtworks
+            }
+            isAvailable = {
+                isAvailableArtworks
+            }
+            isDesktop = {
+                mediaQuery('(min-width: 1200px)')
+            }
+            />
+        } {
+            /* Not Available for this Date */ } {
+            !isAvailableArtworks &&
+                <
+                div className = 'ui grid container last_not-available' >
+                <
+                p className = 'eight wide' > Aucun Artworks Vendues pour cette Période < /p> <
+                /div>
+        } <
+        /section> <
+        /Fragment>
     );
 }
 

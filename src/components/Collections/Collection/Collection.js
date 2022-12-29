@@ -6,7 +6,6 @@ import { Icon, Popup } from 'semantic-ui-react';
 
 import './style.scss'
 
-
 function Collection() {
 
     return (

@@ -1,6 +1,7 @@
 /* COMPONENTS */
 import Attributes from './Attributes/Attributes';
-import MenuCollection from './MenuCollection/MenuCollection'
+import MenuCollection from './MenuCollection/MenuCollection';
+
 import './style.scss'
 
 function Filter() {
