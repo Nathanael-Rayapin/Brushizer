@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { useState } from 'react'
-import { Accordion, Menu } from 'semantic-ui-react';
+import { Accordion, Menu} from 'semantic-ui-react';
 import { Form } from 'semantic-ui-react';
 import { addCollection, removeCollection, buildCollectionsCard } from './FunctionsCollections/FunctionsCollections';
 
@@ -100,6 +100,7 @@ function Attributes() {
                 </Menu.Item>
             </Accordion>
         </div>
+        
         <div className='filter_gallery'>
           { buildCollectionsCard(collections) }
         </div>
