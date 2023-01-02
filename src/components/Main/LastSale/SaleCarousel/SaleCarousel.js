@@ -9,29 +9,40 @@ import { Icon } from 'semantic-ui-react';
 
 import SaleCarouselItem from '../../../Main/LastSale/SaleCarousel/SaleCarouselItem/SaleCarouselItem';
 
-const SaleCarousel = ({ items, isDesktop, slidesToShow }) => {
-
+const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
     return (
-        <div className='carousel_wrapper'>
+        <div className={`carousel_wrapper ${isAvailable ? 'available' : 'not-available'}`}>
             <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button>
             <Swiper
-                // install Swiper modules
                 modules={[A11y, Autoplay, Navigation, Mousewheel]}
                 navigation={{
                     prevEl: '.btn-left',
                     nextEl: '.btn-right',
                 }}
                 keyboardControl= {true}
+                grabCursor={true}
                 autoplay={{
                     delay: 0,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
+                }}
+                breakpoints={{
+                    1700: {
+                        slidesPerView: 4,
+                        spaceBetween: -5
+                    },
+                    1400: {
+                        slidesPerView: 3,
+                        
+                        spaceBetween: -5
+                    },
+                    992: {
+                        slidesPerView: 2,
+                        spaceBetween: 60
+                    }
                   }}
-                speed = {3000}
-                spaceBetween={slidesToShow === 3 ? 20 : 60}
-                slidesPerView={slidesToShow} // Ici, rajouter une règle qui n'affiche que 1 slide à partir de 768px
+                speed={3000}
                 loop={true}
-                grabCursor={true}
                 className='carousel_wrapper-content'
             >
                 {items.map((item, index) => (

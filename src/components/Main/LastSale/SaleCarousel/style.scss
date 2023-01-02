@@ -1,12 +1,20 @@
-@use 'src/styles/vars' as v;
+@use 'src/styles/vars'as v;
+
+.available {
+    display: flex;
+}
+
+.not-available {
+    display: none;
+}
 
 .carousel_wrapper {
-    display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
+    width: 90%;
     margin: auto;
     gap: 1rem;
-    width: 90%;
 
     &-content {
         mask-image: linear-gradient(to right, transparent, v.$second-color, v.$second-color, v.$second-color, v.$second-color, v.$second-color, v.$second-color, transparent);
@@ -16,32 +24,36 @@
 .loader-wrapper {
     width: 100px;
     height: 100px;
-
     img {
         width: 100%;
+        color: #b0b;
     }
+}
+
+.swiper-wrapper {
+    -webkit-transition-timing-function:linear!important; 
+    -o-transition-timing-function:linear!important;
+    transition-timing-function:linear!important; 
 }
 
 @media screen and (max-width: 991px) {
     .swiper-slide {
-        display: flex;
-        justify-content: center;
-        transition: all .4s ease;
+    display: flex;
+    justify-content: center;
+    transition: all .4s ease;             
     }
-
-    .swiper-slide.swiper-slide-prev {
+    .swiper-slide.swiper-slide-prev{
         transform: translateX(15%);
-    }
-
-    .swiper-slide.swiper-slide-next {
+    }           
+    .swiper-slide.swiper-slide-next{
         transform: translateX(-15%);
     }
 }
 
 @media screen and (max-width: 576px) {
-
-    .btn-left,
-    .btn-right {
+    .btn-left, .btn-right {
         display: none;
     }
 }
+
+

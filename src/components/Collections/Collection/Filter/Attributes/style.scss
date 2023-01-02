@@ -1,1 +1,38 @@
 @use 'src/styles/vars' as v;
+
+.item .content {
+    height: 310px;
+    overflow: auto;
+}
+
+.filter_attributes {
+    position: sticky;
+    top: 0;
+    &_accordion {
+        font-weight: 700;
+        background-color: v.$fourth-color;
+        height: 100%;
+        overflow: auto;
+        
+        .title {
+            padding: 0.5rem;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.filter_gallery {
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4rem 2rem 0;
+    flex-wrap: wrap;
+}

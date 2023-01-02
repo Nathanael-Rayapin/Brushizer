@@ -1,89 +1,111 @@
-/* COMPONENTS */
+import { Fragment } from 'react';
 import { useState } from 'react'
-import { Accordion, Menu, Form } from 'semantic-ui-react'
+import { Accordion, Menu} from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
+import { addCollection, removeCollection, buildCollectionsCard } from './FunctionsCollections/FunctionsCollections';
+
+import artworks from '../../../../../data/artworks.json';
 import './style.scss'
 
-
-const BackgroundForm = (
-    <Form>
-      <Form.Group grouped>
-        <Form.Radio label='Red' name='background' value='red' />
-        <Form.Radio label='Orange' name='background' value='orange' />
-        <Form.Radio label='Green' name='background' value='green' />
-        <Form.Radio label='Blue' name='background' value='blue' />
-      </Form.Group>
-    </Form>
-  )
-  
-  const ShapeForm = (
-    <Form>
-      <Form.Group grouped>
-        <Form.Radio label='001' name='size' value='001' />
-        <Form.Radio label='002' name='size' value='002' />
-        <Form.Radio label='003' name='size'value='003' />
-        <Form.Radio label='004' name='size' value='004' />
-      </Form.Group>
-    </Form>
-  )
-
-  const ShapeColorForm = (
-    <Form>
-      <Form.Group grouped>
-        <Form.Radio label='Red' name='shape-color' value='red' />
-        <Form.Radio label='Orange' name='shape-color' value='orange' />
-        <Form.Radio label='Green' name='shape-color' value='green' />
-        <Form.Radio label='Blue' name='shape-color' value='blue' />
-      </Form.Group>
-    </Form>
-  )
-
 function Attributes() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [collections, setCollections] = useState(artworks);
+    const [count, setCount] = useState(0);
+    
+    const handleIndex = (e, titleProps) => {
+      /* Handle Checkbox Index */
+    const { index } = titleProps;
+    const newIndex = activeIndex === index ? -1 : index;
+    setActiveIndex(newIndex);
+    };
 
-    const [activeIndex, setActiveIndex] = useState(0)
-  
-    const handleClick = (e, titleProps) => {
-      const { index } = titleProps
-      const newIndex = activeIndex === index ? -1 : index
-  
-      setActiveIndex(newIndex)
+    function formFactory(value) {
+      /* Build Dynamic Form (Shape, Background, Shape-Color) */
+      return (
+        <Form>
+          <Form.Group grouped>
+            {artworks.map((artwork) => {
+                return (
+                <Form.Checkbox 
+                key={artwork.id} 
+                label={artwork.attributes[value]} 
+                name={artwork.attributes.name} 
+                value={artwork.attributes[value]}
+                onChange={(event, {checked}) => manageForm(event, checked, value)} />) 
+                }
+            )}
+          </Form.Group>
+        </Form>
+      )
+    };
 
-    }
+    function manageForm(event, checked, value) {
+      /* Manage Filter Collections */
+      const newForm = { value : event.target.textContent, form: value };
+      // Checked
+      if (checked === true) {
+        if (count === 0) {
+          setCount(count + 1);
+          const filteredCollections = addCollection(artworks, newForm);
+          setCollections(filteredCollections);
+        } else {
+          setCount(count + 1);
+          const filteredCollections = addCollection(artworks, newForm);
+          setCollections(prevState => [...prevState, ...filteredCollections]);
+        }
+      // UnChecked
+      } else {
+        setCount(count - 1);
+        if (count === 1) {
+          setCollections(artworks);
+        } else {
+          const filteredCollections = removeCollection(collections, newForm);
+          setCollections(filteredCollections);
+        }
+      }
+    };
+
     return (
+      <Fragment>
         <div className='filter_attributes'>
-                
-            <Accordion as={Menu} vertical>
+            <Accordion className='filter_attributes_accordion' as={Menu} vertical>
                 <Menu.Item>
                 <Accordion.Title
-                active={activeIndex === 1}
+                active={activeIndex === 0}
                 content='Shape'
                 index={0}
-                onClick={handleClick}
+                onClick={handleIndex}
                 />
-                <Accordion.Content active={activeIndex === 1} content={ShapeForm} />
+                <Accordion.Content active={activeIndex === 0} content={formFactory('shape')} />
                 </Menu.Item>
     
                 <Menu.Item>
                     <Accordion.Title
-                    active={activeIndex === 0}
+                    active={activeIndex === 1}
                     content='Background'
                     index={1}
-                    onClick={handleClick}
+                    onClick={handleIndex}
                     />
-                    <Accordion.Content active={activeIndex === 0} content={BackgroundForm} />
+                    <Accordion.Content active={activeIndex === 1} content={formFactory('background')} />
                 </Menu.Item>
 
                 <Menu.Item>
                     <Accordion.Title
-                    active={activeIndex === 1}
+                    active={activeIndex === 2}
                     content='Shape-Color'
-                    index={1}
-                    onClick={handleClick}
+                    index={2}
+                    onClick={handleIndex}
                     />
-                    <Accordion.Content active={activeIndex === 1} content={ShapeColorForm} />
+                    <Accordion.Content active={activeIndex === 2} content={formFactory('shape_color')} />
                 </Menu.Item>
             </Accordion>
         </div>
-      )
-}   
+        
+        <div className='filter_gallery'>
+          { buildCollectionsCard(collections) }
+        </div>
+      </Fragment>
+      );
+};
 
 export default Attributes;

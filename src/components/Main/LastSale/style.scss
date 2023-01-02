@@ -41,6 +41,10 @@
             flex-wrap: nowrap;
             gap: 4rem;
 
+            &-box{
+                width: 100px !important;
+            }
+
             &-seeall{
                 background-color: v.$third-color;
                 color: v.$first-color;
@@ -53,6 +57,16 @@
                 white-space: nowrap;
             }
         }
+    }
+
+    &_not-available p {
+        text-align: center;
+        border-radius: 15px;
+        border: 2px solid #ffffff;
+        padding: 1rem;
+        margin: 0 auto;
+        color: #000000;
+        background: #ffffff;
     }
 }
 

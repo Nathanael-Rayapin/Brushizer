@@ -26,6 +26,7 @@
                     flex-direction: row;
                     align-items: center;
                     gap: 1rem;
+
                         &_img {
                             height: 10rem;
                             width: 10rem;
@@ -37,44 +38,49 @@
                             background-image: url("../../../../public/assets/nft/009.png");
                         }
                         &_name{
-                            &-collection {
-                                font-size: 3rem;
-                                font-weight: 900;
-                                text-transform: uppercase;
-                                color: v.$first-color;
-                                transition: color 0.5s ease 0s;
-                                &:hover {
-                                    color: v.$fourth-color;
-                                    transition: color 0.5s ease 0s;
-                                }
-
-                                i {
-                                    color: #e6c619 !important;
-                                }
+                            &_container {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
                                 
+                                &--collection {
+                                    font-size: 3rem;
+                                    font-weight: 900;
+                                    text-transform: uppercase;
+                                    color: v.$first-color;
+                                    transition: color 1s ease 0s;
+                                    &:hover {
+                                        cursor: pointer;
+                                        color: v.$fourth-color;
+                                        transition: color 1s ease 0s;
+                                    }
+                                }
                             }
-                            &-artist {
-                                font-size: 2rem;
-                                font-weight: 400;
-                                text-transform: uppercase;
-                                color: v.$first-color;
 
-                                i {
-                                    color: #e6c619 !important;
-                                }
-
-                                &:hover {
-                                    color: v.$fourth-color;
-                                    transition: color 0.5s ease 0s;
-                                }
-
-                                span {
-                                    font-size: 1.5rem;
+                            &_by {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                
+                                &--artist {
+                                    font-size: 2rem;
                                     font-weight: 400;
-                                    color: v.$third-color;
+                                    text-transform: uppercase;
+                                    color: v.$fourth-color;
+                                    transition: color 1s ease 0s;
+                                    &:hover {
+                                        cursor: pointer;
+                                        color: v.$third-color;
+                                        transition: color 1s ease 0s;
+                                    }
+
+                                    span {
+                                        font-size: 1.5rem;
+                                        font-weight: 400;
+                                        color: v.$third-color;
+                                    }
                                 }
-                            }
-                            
+                            } 
                         }
                 }
 
@@ -180,6 +186,8 @@
             border-radius: 1.2rem;
             border: 4px solid v.$second-color;
             background: v.$fourth-color;
+            max-height: 300px;
+            max-width: 40vw;
 
             &--title {
                 -webkit-text-stroke: 0.1rem v.$first-color;
@@ -191,7 +199,7 @@
             }
 
             &--text {
-                font-weight: 600;
+                font-weight: 400;
                 font-size: 1rem;
                 line-height: 1.4rem;
                 text-align: justify;

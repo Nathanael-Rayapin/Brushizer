@@ -6,7 +6,6 @@ import { Icon, Popup } from 'semantic-ui-react';
 
 import './style.scss'
 
-
 function Collection() {
 
     return (
@@ -18,18 +17,21 @@ function Collection() {
                         <div className='collection_section_infos_detail'>
                             <div className='collection_section_infos_detail_img'></div>
                             <div className='collection_section_infos_detail_name'>
-                                <div className='collection_section_infos_detail_name-collection'>BRUSHIZER <Popup
-                                    trigger={<Icon size='small' name="check circle" />}
+                                <div className='collection_section_infos_detail_name_container'>
+                                    <h3 className='collection_section_infos_detail_name_container--collection'>BRUSHIZER</h3>
+                                    <Popup
+                                    trigger={<Icon size='large' name="blue check circle" />}
                                     content='This collection has been verified.'
                                     inverted
                                     />
-                                    
                                 </div>
-                                <div className='collection_section_infos_detail_name-artist'><span>by</span> Mezange <Popup
-                                    trigger={<Icon size='small' name="check circle" />}
+                                <div className='collection_section_infos_detail_name_by'>
+                                    <h3 className='collection_section_infos_detail_name_by--artist'><span>by</span> MEZANGE</h3>
+                                    <Popup
+                                    trigger={<Icon size='large' name="blue check circle" />}
                                     content='This artist has been verified.'
                                     inverted
-                                    />
+                                />
                                 </div>
                             </div>
                         </div>
@@ -82,13 +84,13 @@ function Collection() {
                         </div>
                     </div>
                     <div className='collection_section_description'>
-                            <h3 className='collection_section_description--title'>
-                                Description
-                            </h3>
-                            <p className='collection_section_description--text' >
-                                Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
-                                Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
-                            </p>
+                        <h3 className='collection_section_description--title'>
+                            Description
+                        </h3>
+                        <p className='collection_section_description--text' >
+                            Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+                            Quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus."
+                        </p>
                     </div>
                 </div>
 
