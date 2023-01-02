@@ -81,7 +81,7 @@
         border: 1px solid v.$first-color;
         border-radius: 10px;
         transition: box-shadow 1s;
-        padding: 0 8%;
+        padding: 0 5%;
 
         &:hover {
             cursor: pointer;
@@ -96,6 +96,7 @@
                 font-size: 1.2rem;
                 justify-content: space-between;
                 flex-wrap: nowrap;
+                text-overflow: ellipsis;
                 align-items: center;
                 padding: 10% 0 5%;
                 border-bottom: 2px solid #acacac45;
