@@ -16,9 +16,10 @@ import Artists from '../Artists/Artists'
 import Collections from '../Collections/Collections';
 import Collection from '../Collections/Collection/Collection';
 import Charity from '../Charity/Charity';
-import Contact from '../Contact/Contact';
+// import Contact from '../Contact/Contact';
 import Protected from '../Admin/Protected/Protected';
 import NotFound404 from '../NotFound404/NotFound404';
+import RoadMap from '../RoadMap/RoadMap';
 
 function App() {
 
@@ -43,6 +44,9 @@ function App() {
         {/* COLLECTION */}
         <Route path='/collections/collection' element={<Collection />} />
 
+        {/* ROADMAP */}
+        <Route path='/roadmap' element={<RoadMap />} />
+
         {/* CHARITY */}
         <Route path='/charity' element={<Charity />} />
 
@@ -58,7 +62,7 @@ function App() {
 
 
         {/* CONTACT */}
-        <Route path='/contact' element={<Contact />} />
+        {/* <Route path='/contact' element={<Contact />} /> */}
 
         {/* Admin */}
         {/* <Route path='/login-team' element={<Admin />} /> */}

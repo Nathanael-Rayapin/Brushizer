@@ -8,7 +8,7 @@ function NavMenu() {
                 <li className='header_nav_list-item'><NavLink to='/artists'>Artists</NavLink></li>
                 <li className='header_nav_list-item'><NavLink to='/collections'>Collections</NavLink></li>
                 <li className='header_nav_list-item'><NavLink to='/charity'>Charity</NavLink></li>
-                <li className='header_nav_list-item'><NavLink to='/contact'>Contact</NavLink></li>
+                <li className='header_nav_list-item'><NavLink to='/roadmap'>Roadmap</NavLink></li>
             </ul>
         </nav>
     );
