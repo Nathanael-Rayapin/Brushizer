@@ -36,4 +36,14 @@
     align-items: center;
     padding: 4rem 2rem 0;
     flex-wrap: wrap;
+
+    &-not-available p {
+        text-align: center;
+        border-radius: 15px;
+        border: 2px solid #ffffff;
+        padding: 1rem;
+        margin: 0 auto;
+        color: #000000;
+        background: #ffffff;
+    }
 }

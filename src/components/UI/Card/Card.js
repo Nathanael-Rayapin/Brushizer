@@ -6,7 +6,7 @@ const Card = (props) => {
     return(
         <NavLink to='/artwork/1'>
             <div className='card_filter'>
-              <img className='card_filter_img' src={props.image} alt='artwork preview'></img>
+              <img className='card_filter_img' src={props.image} alt='Artwork preview'></img>
               <div className='card_filter_wrapper'>
                 <span className='card_filter_wrapper--title'>{props.name}</span>
               </div>
