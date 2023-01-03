@@ -61,13 +61,14 @@
                 &:hover {
                     background-color: v.$second-color;
                     border: 2px solid v.$fourth-color;
+
+                    .footer_brand-twitter-i {
+                        color: v.$fourth-color !important;
+                    }
                 }
                 &-i {
                     margin-left: 4px !important;
                     color: v.$first-color !important;
-                    &:hover {
-                        color: v.$fourth-color !important;
-                    }
                 }
             } 
         }
@@ -112,6 +113,11 @@
                 padding: 0 1rem 2rem 2rem;
                 justify-content: space-between;
                 flex-wrap: nowrap;
+            }
+            &_brand {
+                &-logo {
+                    font-size: 3rem;
+                }
             }
             &_reserve {
                 padding: 0rem 1rem;

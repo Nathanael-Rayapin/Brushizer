@@ -16,14 +16,20 @@
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            width: 65vw;
+            padding: 3rem;
+            border: 2px solid v.$first-color;
+            border-radius: 1.6rem;
+            box-shadow: -20px -20px 60px v.$second-color,
+            20px 20px 60px v.$third-color;
 
             &--title {
-                font-size: 10rem;
+                font-size: 8rem;
                 font-weight: 700;
             }
 
             &--text {
-                font-size: 2rem;
+                font-size: 1.75rem;
                 font-weight: 200;
             }
 
@@ -51,7 +57,7 @@
         }
 
         &_img {
-            width: 40vw;
+            width: 35vw;
             transition: transform 1s, box-shadow 1s;
 
             &:hover {
@@ -338,6 +344,18 @@
 
 @media screen and (max-width: 1050px) {
     .charity_main {
+        &_wrapper {
+            gap: 1.5rem;
+            flex-direction: column-reverse;
+            gap: 3rem;
+            &_text {
+                width: 80vw;
+                &--btn {
+                    align-self: center;
+                    margin-right: 0rem;
+                }
+            }
+        }
         &_how {
             &_wrapper {
                 flex-direction: column;
@@ -350,14 +368,14 @@
     .charity_main {
         padding: 2rem 0rem;
         &_wrapper {
-            gap: 1.5rem;
-            flex-direction: column-reverse;
-            gap: 3rem;
-
             &_text {
+                width: 90vw;
                 &--title {
                     text-align: center;
                     font-size: 7rem;
+                }
+                &--text {
+                    font-size: 1.4rem;
                 }
             }
         }
@@ -388,8 +406,12 @@
     .charity_main {
         &_wrapper {
             &_text {
+                width: 95vw;
                 &--title {
                     font-size: 5rem;
+                }
+                &--text {
+                    font-size: 1.2rem;
                 }
             }
         }

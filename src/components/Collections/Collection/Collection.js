@@ -3,10 +3,14 @@ import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import Filter from '../Collection/Filter/Filter'
 import { Icon, Popup } from 'semantic-ui-react';
+import React, { useEffect } from "react";
 
 import './style.scss'
 
 function Collection() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
     return (
         <>
