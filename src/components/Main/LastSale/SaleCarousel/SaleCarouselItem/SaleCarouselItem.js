@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
+import { Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 
 import './style.scss'
 
 function SaleCarouselItem({ item, isDesktop }) {
     return (
-        isDesktop && isDesktop ? // Check if client is on desktop, change carousel Item depending
-            // Ici le HTML pour la card desktop
+            isDesktop ?
             <div
                 className={`last_carousel_container-item 
                 last_carousel_container cardlast`}>
@@ -18,7 +18,8 @@ function SaleCarouselItem({ item, isDesktop }) {
                     <div className='card_infos'>
                         {/* Bloc des informations de la card */}
                         <div className='card_infos_upper'>
-                            <span className='card_infos_upper-id'>{item.name}</span>
+                            <span className='card_infos_upper-id'>{item.name} <Icon name='check circle' size='small' color='blue'></Icon></span>
+                            <span className='card_infos_upper-likes'><Icon name='heart' color='red' size='small'></Icon>231</span>
                         </div>
                         <div className='card_infos_lower'>
                             <div className='card_infos_lower-prices'>

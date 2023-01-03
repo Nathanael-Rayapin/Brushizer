@@ -4,21 +4,15 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
     &_title {
-        font-size: 11rem;
+        font-size: 12rem;
         font-weight: 900;
         color: v.$second-color;
         -webkit-text-stroke: 3px v.$fourth-color;
-        text-shadow: 1px -1px 0 #767676, -1px 2px 1px #737272, -2px 4px 1px #767474, -3px 6px 1px #787777, -4px 8px 1px #7b7a7a, -5px 10px 1px #7f7d7d, -6px 12px 1px #828181, -7px 14px 1px #868585, -8px 16px 1px #8b8a89, -9px 18px 1px #8f8e8d, -10px 20px 1px #949392, -11px 22px 1px #999897;
-        transition: transform 0.8s, text-shadow 1s;
-        &:hover {
-            transition: transform 0.8s, text-shadow 1s;
-            text-shadow: 0px 0px;
-        }
+
     }
     &_img {
-        margin-right: 15rem;
+        margin-right: 5rem;
         width: 60vw;
     }
 }

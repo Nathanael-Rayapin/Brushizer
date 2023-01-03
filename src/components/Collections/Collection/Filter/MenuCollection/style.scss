@@ -1,22 +1,39 @@
 @use 'src/styles/vars' as v;
 
-.filter_menu{
+.filter_menu {
     display: flex;
     align-items: center;
     background: v.$third-color !important;
     border: none !important;
     box-shadow: none !important;
     padding: 0 0 0.5rem 1.2rem;
-
     gap: 2rem;
 
-    &_dropdown{
+    &_search {
+        height: 40px;
+    }
+
+    &_dropdown {
+        height: 40px;
         border-radius: 1.2rem !important;
         border: none !important;
             &::after {
             background: v.$second-color !important;
-
         }
-
     }
+
+    &_button {
+        height: 40px;
+        border: none;
+        border-radius: 15px;
+        padding: .5rem;
+        background-color: #fff;
+
+        &-icon {
+            cursor: pointer;
+            margin: 0 !important;
+        }
+    }
+
+    
 }
