@@ -59,31 +59,31 @@ const Timeline = ({ setObserver, callback }) => {
     }, []);
   
     return (
-      <div className="wrapper">
-        <div id="timeline1" ref={timeline1} className="timeline" />
-        <div className="circleWrapper">
-          <div id="circle1" ref={circle1} className="circle">
+      <div className="road-map_wrapper">
+        <div id="timeline1" ref={timeline1} className="road-map_wrapper--timeline" />
+        <div className="road-map_wrapper_contain">
+          <div id="circle1" ref={circle1} className="road-map_wrapper_contain--circle">
             1
           </div>
           <div className="message-left">{message1}</div>
         </div>
-        <div id="timeline2" ref={timeline2} className="timeline" />
-        <div className="circleWrapper">
-          <div id="circle2" ref={circle2} className="circle">
+        <div id="timeline2" ref={timeline2} className="road-map_wrapper--timeline" />
+        <div className="road-map_wrapper_contain">
+          <div id="circle2" ref={circle2} className="road-map_wrapper_contain--circle">
             2
           </div>
           <div className="message-right">{message2}</div>
         </div>
-        <div id="timeline3" ref={timeline3} className="timeline" />
-        <div className="circleWrapper">
-          <div id="circle3" ref={circle3} className="circle">
+        <div id="timeline3" ref={timeline3} className="road-map_wrapper--timeline" />
+        <div className="road-map_wrapper_contain">
+          <div id="circle3" ref={circle3} className="road-map_wrapper_contain--circle">
             3
           </div>
           <div className="message-left">{message3}</div>
         </div>
-        <div id="timeline4" ref={timeline4} className="timeline" />
-        <div className="circleWrapper">
-          <div id="circle4" ref={circle4} className="circle">
+        <div id="timeline4" ref={timeline4} className="road-map_wrapper--timeline" />
+        <div className="road-map_wrapper_contain">
+          <div id="circle4" ref={circle4} className="road-map_wrapper_contain--circle">
             4
           </div>
           <div className="message-right">{message4}</div>
