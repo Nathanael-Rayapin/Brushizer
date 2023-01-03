@@ -344,6 +344,18 @@
 
 @media screen and (max-width: 1050px) {
     .charity_main {
+        &_wrapper {
+            gap: 1.5rem;
+            flex-direction: column-reverse;
+            gap: 3rem;
+            &_text {
+                width: 80vw;
+                &--btn {
+                    align-self: center;
+                    margin-right: 0rem;
+                }
+            }
+        }
         &_how {
             &_wrapper {
                 flex-direction: column;
@@ -356,14 +368,14 @@
     .charity_main {
         padding: 2rem 0rem;
         &_wrapper {
-            gap: 1.5rem;
-            flex-direction: column-reverse;
-            gap: 3rem;
-
             &_text {
+                width: 90vw;
                 &--title {
                     text-align: center;
                     font-size: 7rem;
+                }
+                &--text {
+                    font-size: 1.4rem;
                 }
             }
         }
@@ -394,8 +406,12 @@
     .charity_main {
         &_wrapper {
             &_text {
+                width: 95vw;
                 &--title {
                     font-size: 5rem;
+                }
+                &--text {
+                    font-size: 1.2rem;
                 }
             }
         }
