@@ -9,8 +9,8 @@ function HeroInfo() {
                 </h1>
             </div>
             <div className='hero_info_buttons'>
-                <button className='hero_info_buttons-mint'><NavLink to='/signup'>CREATE ACCOUNT</NavLink></button>
-                <button className='hero_info_buttons-show'><NavLink to='/artists'>SHOW ARTISTS</NavLink></button>
+                <button className='hero_info_buttons-mint'><NavLink to='/signup'>MINT NOW</NavLink></button>
+                <button className='hero_info_buttons-show'><NavLink to='/collection'>SHOW COLLECTION</NavLink></button>
             </div>
         </div>
     );

@@ -6,7 +6,6 @@ import './style.scss'
 
 function Filter() {
 
-    
     return (
         <div className='filter_container'>
             <div className='filter_menu'>

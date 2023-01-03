@@ -100,10 +100,11 @@ function Attributes() {
                 </Menu.Item>
             </Accordion>
         </div>
-        
-        <div className='filter_gallery'>
-          { buildCollectionsCard(collections) }
-        </div>
+
+          <div className='filter_gallery'>
+            
+              { buildCollectionsCard(collections) }
+          </div>
       </Fragment>
       );
 };

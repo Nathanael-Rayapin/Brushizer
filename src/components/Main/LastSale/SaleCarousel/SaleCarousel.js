@@ -12,7 +12,7 @@ import SaleCarouselItem from '../../../Main/LastSale/SaleCarousel/SaleCarouselIt
 const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
     return (
         <div className={`carousel_wrapper ${isAvailable ? 'available' : 'not-available'}`}>
-            <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button>
+            {/* <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button> */}
             <Swiper
                 modules={[A11y, Autoplay, Navigation, Mousewheel]}
                 navigation={{
@@ -28,20 +28,25 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                 }}
                 breakpoints={{
                     1700: {
-                        slidesPerView: 4,
+                        slidesPerView: 5,
                         spaceBetween: -5
                     },
                     1400: {
+                        slidesPerView: 4,
+                        
+                        spaceBetween: -5
+                    },
+                    1200: {
                         slidesPerView: 3,
                         
                         spaceBetween: -5
                     },
                     992: {
                         slidesPerView: 2,
-                        spaceBetween: 60
+                        spaceBetween: 30
                     }
                   }}
-                speed={3000}
+                speed={3500}
                 loop={true}
                 className='carousel_wrapper-content'
             >
@@ -51,7 +56,7 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <button className='hero_carousel-buttons-next btn-right'><Icon size='large' name="chevron right" /></button>
+            {/* <button className='hero_carousel-buttons-next btn-right'><Icon size='large' name="chevron right" /></button> */}
         </div >
     );
 }
