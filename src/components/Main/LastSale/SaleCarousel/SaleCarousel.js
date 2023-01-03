@@ -11,7 +11,7 @@ import SaleCarouselItem from '../../../Main/LastSale/SaleCarousel/SaleCarouselIt
 const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
     return (
         <div className={`carousel_wrapper ${isAvailable ? 'available' : 'not-available'}`}>
-            <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button>
+            {/* <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button> */}
             <Swiper
                 modules={[A11y, Autoplay, Navigation, Mousewheel]}
                 navigation={{
@@ -45,7 +45,7 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <button className='hero_carousel-buttons-next btn-right'><Icon size='large' name="chevron right" /></button>
+            {/* <button className='hero_carousel-buttons-next btn-right'><Icon size='large' name="chevron right" /></button> */}
         </div >
     );
 }
