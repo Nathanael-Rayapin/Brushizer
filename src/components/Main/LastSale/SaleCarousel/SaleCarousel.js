@@ -21,11 +21,12 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                 }}
                 keyboardControl= {true}
                 grabCursor={true}
-                autoplay={{
-                    delay: 0,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                }}
+                // autoplay={{
+                //     delay: 0,
+                //     disableOnInteraction: false,
+                //     pauseOnMouseEnter: true,
+                // }}
+                mousewheel= {true}
                 breakpoints={{
                     1700: {
                         slidesPerView: 5,
@@ -46,7 +47,7 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                         spaceBetween: 30
                     }
                   }}
-                speed={3500}
+                // speed={4000}
                 loop={true}
                 className='carousel_wrapper-content'
             >

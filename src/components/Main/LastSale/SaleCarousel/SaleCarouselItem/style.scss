@@ -77,11 +77,11 @@
     .cardlast {
         display: flex;
         flex-direction: column;
-        background: v.$body-color;
+        background: v.$fourth-color;
         border: 1px solid v.$first-color;
         border-radius: 10px;
         transition: box-shadow 1s;
-        padding: 0 5%;
+        padding: 0 6%;
 
         &:hover {
             cursor: pointer;

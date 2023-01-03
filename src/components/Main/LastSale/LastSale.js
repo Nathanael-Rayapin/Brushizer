@@ -23,9 +23,7 @@ function LastSale() {
     return (
         <Fragment >
         <div className="wave-wrapper" >
-            <
-                img src="/assets/wave-top.svg"
-                alt="Wave" />
+            <img src="/assets/wave-top.svg" alt="Wave" />
         </div>
         <section className='last'> {
             /* Filter - Artworks */} 
@@ -56,6 +54,9 @@ function LastSale() {
                     </div>
         }
         </section>
+        <div className="wave-bottom" >
+            <img src="/assets/wave-small-bottom.svg" alt="Wave" />
+        </div>
         </Fragment>
                             );
 }
