@@ -11,7 +11,7 @@ import SaleCarouselItem from '../../../Main/LastSale/SaleCarousel/SaleCarouselIt
 const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
     return (
         <div className={`carousel_wrapper ${isAvailable ? 'available' : 'not-available'}`}>
-            {/* <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button> */}
+            <button className='hero_carousel-buttons-prev btn-left'><Icon size='large' name="chevron left" /></button>
             <Swiper
                 modules={[A11y, Autoplay, Navigation, Mousewheel]}
                 navigation={{
@@ -20,33 +20,22 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                 }}
                 keyboardControl= {true}
                 grabCursor={true}
-                // autoplay={{
-                //     delay: 0,
-                //     disableOnInteraction: false,
-                //     pauseOnMouseEnter: true,
-                // }}
-                mousewheel= {true}
+                mousewheel= {true} 
                 breakpoints={{
                     1700: {
-                        slidesPerView: 5,
+                        slidesPerView: 4,
                         spaceBetween: -5
                     },
                     1400: {
-                        slidesPerView: 4,
-                        
-                        spaceBetween: -5
-                    },
-                    1200: {
                         slidesPerView: 3,
                         
                         spaceBetween: -5
                     },
                     992: {
                         slidesPerView: 2,
-                        spaceBetween: 30
+                        spaceBetween: 60
                     }
                   }}
-                // speed={4000}
                 loop={true}
                 className='carousel_wrapper-content'
             >
@@ -56,7 +45,7 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            {/* <button className='hero_carousel-buttons-next btn-right'><Icon size='large' name="chevron right" /></button> */}
+            <button className='hero_carousel-buttons-next btn-right'><Icon size='large' name="chevron right" /></button>
         </div >
     );
 }

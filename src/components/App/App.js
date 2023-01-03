@@ -13,13 +13,12 @@ import Footer from '../Footer/Footer';
 import Profile from '../Profile/Profile';
 import Artwork from '../Artwork/Artwork';
 import Artists from '../Artists/Artists'
-// import Collections from '../Collections/Collections';
+import Collections from '../Collections/Collections';
 import Collection from '../Collections/Collection/Collection';
 import Charity from '../Charity/Charity';
-// import Contact from '../Contact/Contact';
+import Contact from '../Contact/Contact';
 import Protected from '../Admin/Protected/Protected';
 import NotFound404 from '../NotFound404/NotFound404';
-import RoadMap from '../RoadMap/RoadMap';
 
 function App() {
 
@@ -40,12 +39,9 @@ function App() {
         <Route path='/artists' element={<Artists />} />
 
         {/* COLLECTIONS */}
-        {/* <Route path='/collections' element={<Collections />} /> */}
+        <Route path='/collections' element={<Collections />} />
         {/* COLLECTION */}
-        <Route path='/collection' element={<Collection />} />
-
-        {/* ROADMAP */}
-        <Route path='/roadmap' element={<RoadMap />} />
+        <Route path='/collections/collection' element={<Collection />} />
 
         {/* CHARITY */}
         <Route path='/charity' element={<Charity />} />
@@ -62,7 +58,7 @@ function App() {
 
 
         {/* CONTACT */}
-        {/* <Route path='/contact' element={<Contact />} /> */}
+        <Route path='/contact' element={<Contact />} />
 
         {/* Admin */}
         {/* <Route path='/login-team' element={<Admin />} /> */}

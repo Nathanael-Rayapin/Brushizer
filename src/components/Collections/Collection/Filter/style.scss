@@ -5,15 +5,10 @@
     flex-direction: column;
     padding: 2rem 2rem;
     background-color: v.$third-color;
-    overflow: hidden;
 }
 
 .filter_wrapper {
     display: flex;
-    height: auto;
-    max-height: 900px;
+    height: 450px;
     background-color: v.$second-color;
-    border-radius: 1.2rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
