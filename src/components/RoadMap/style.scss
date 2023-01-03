@@ -12,6 +12,8 @@
     &_top {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         gap: 1rem;
         padding: 5rem;
@@ -65,7 +67,6 @@
     position: absolute;
     top: 0%;
     left: 100%;
-    min-width: 150px;
     font-size: 3rem;
     font-weight: 700;
     color: v.$second-color;
@@ -76,9 +77,105 @@
     position: absolute;
     top: 0%;
     right: 100%;
-    min-width: 150px;
     font-size: 3rem;
     font-weight: 700;
     color: v.$fourth-color;
     margin-right: 4rem;
+}
+
+@media screen and (max-width: 1200px) { 
+    .road-map {
+        padding-top: 10vh;
+        border-bottom-left-radius: 30rem;
+    }
+}
+
+@media screen and (max-width: 830px) { 
+    .road-map {
+        border-bottom-left-radius: 20rem;
+        &_top {
+            padding: 3rem 5rem 2rem;
+            &--title{
+                font-size: 4rem;
+                font-weight: 800;
+            }
+        }
+    }
+    .message-right {
+        margin-left: 1.5rem;
+    }
+    .message-left {
+        margin-right: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 730px) { 
+    .road-map {
+        border-bottom-left-radius: 10rem;
+        &_wrapper {
+            &--timeline {
+                height: 150px;
+            }
+        }
+        &_top {
+            padding: 4rem 3rem 3rem;
+            &--title{
+                font-size: 3rem;
+            }
+    
+            &--scroll{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .message-right {
+        font-size: 2rem;
+    }
+    .message-left {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 529px) { 
+    .road-map {
+        &_wrapper {
+            &--timeline {
+                height: 100px;
+            }
+            &_contain {
+                &--circle {
+                    width: 15px;
+                    height: 15px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: v.$fourth-color;
+                    font-weight: 800;
+                    font-size: 1.5rem;
+                    padding: 1rem;
+                    border: 4px solid v.$first-color;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .message-right {
+        font-size: 1.5rem;
+        margin-left: 1rem;
+    }
+    .message-left {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 375px) { 
+    .message-right {
+        font-size: 1.25rem;
+        margin-left: 0.5rem;
+    }
+    .message-left {
+        font-size: 1.25rem;
+        margin-right: 0.5rem;
+    }
 }

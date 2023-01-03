@@ -9,9 +9,9 @@ function SidebarNav({ sideVisible, pseudo }) {
             <ul className='header_sidebar_list'>
                 <div className='header_sidebar_list_menu'>
                     <li className='header_sidebar_list_menu-item'><NavLink to='/artists'>Artists</NavLink></li>
-                    <li className='header_sidebar_list_menu-item'><NavLink to='/collections'>Collections</NavLink></li>
+                    <li className='header_sidebar_list_menu-item'><NavLink to='/collection'>Collection</NavLink></li>
                     <li className='header_sidebar_list_menu-item'><NavLink to='/charity'>Charity</NavLink></li>
-                    <li className='header_sidebar_list_menu-item'><NavLink to='/contact'>Contact</NavLink></li>
+                    <li className='header_sidebar_list_menu-item'><NavLink to='/roadmap'>Roadmap</NavLink></li>
                 </div>
                 <div className='header_sidebar_list_auth'>
                     {pseudo && <Logout pseudo={pseudo} />}
