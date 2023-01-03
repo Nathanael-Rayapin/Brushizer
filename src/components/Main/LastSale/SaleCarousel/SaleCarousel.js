@@ -5,7 +5,6 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import './style.scss';
-import { Icon } from 'semantic-ui-react';
 
 import SaleCarouselItem from '../../../Main/LastSale/SaleCarousel/SaleCarouselItem/SaleCarouselItem';
 

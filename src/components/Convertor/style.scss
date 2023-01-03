@@ -1,0 +1,237 @@
+@use 'src/styles/vars' as v;
+
+.convertor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2% 6%;
+
+    &_decrypt{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        border-radius: 60px 60px 60px 60px;
+        box-shadow: v.$third-color 1px 1px 80px 2px;
+        transition: all 1s ease 0s;
+            &:hover{
+            box-shadow: v.$second-color 1px 1px 80px 2px;
+            transition: 0.8s;
+            }
+
+            &--title {
+                text-align: center;
+                font-size: 4rem;
+                font-weight: 800;
+                background: v.$second-color;
+                padding: 2% 1%;
+                border-radius: 60px 60px 0px 0px;
+            }
+
+            &--subtitle {
+                text-align: center;
+                font-size: 2rem;
+                font-weight: 400;
+                background-color: v.$third-color;
+                padding: 2% 1%;
+            }
+
+            &_form {
+                display: flex;
+                justify-content: space-between;
+
+                &_number {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 40%;
+                    padding: 2%;
+
+                    &--title{
+                        text-align: center;
+                        font-size: 1.6rem;
+                        font-weight: 800;
+                    }
+
+                    &_zone{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 5% 0;
+
+                        svg {
+                            fill: v.$first-color;
+                        }
+
+                        &_exemple {
+                            display: flex;
+                            flex-direction: column;
+                            margin-left: 5%;
+
+                            p {
+                                font-size: 1.2rem;
+                                font-weight: 200;
+                                margin-bottom: 6%;
+                            }
+
+                            input {
+                                margin: 3% 0 0;
+                                padding: 5% 5%;
+                                font-size: 2rem;
+                                font-weight: 900;
+                                width: 8rem;
+                                color: v.$first-color;
+                                background-color: v.$fourth-color;
+                                border: none;
+                                border-radius: 10px;
+                                &::placeholder {
+                                    color: v.$second-color;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &_or {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 15%;
+                    text-align: center;
+
+                    font-size: 2.4rem;
+                    font-weight: 800;
+
+                    color: v.$first-color;
+                    background: v.$second-color;
+                }
+
+                &_hash {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 45%;
+                    padding: 2%;
+
+                    h3 {
+                        font-size: 1.6rem;
+                        font-weight: 800;
+                    }
+
+                    h4 {
+                        font-size: 1rem;
+                        font-weight: 300;
+                    }
+                }
+
+                &_input {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 5% 0;
+
+                    &_example {
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 2.5%;
+
+                        p {
+                            font-size: 1.2rem;
+                            font-weight: 200;
+                            margin-bottom: 6%;
+                        }
+
+                        &--input {
+                            margin: 3% 0 0;
+                            padding: 5% 5%;
+                            font-size: 1rem;
+                            font-weight: 900;
+                            width: 100%;
+                            color: v.$first-color;
+                            background-color: v.$fourth-color;
+                            border: none;
+                            border-radius: 10px;
+
+                            &::placeholder {
+                                color: v.$second-color;
+                            }
+                        }
+                    }
+
+                    svg {
+                        fill: v.$first-color;
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+    }
+
+    &_btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 150px;
+        color: v.$second-color;
+        background: v.$first-color;
+        padding: 4%;
+        border: none;
+        font-size: 2.6rem;
+        font-weight: 800;
+        border-radius: 0px 0px 60px 60px;
+        overflow: hidden;
+        &:hover {
+            color: v.$third-color;
+            transition: color .7s ease-in-out;
+
+            .convertor_btn--i_right {
+                right: 12.75rem;
+                transform: translateX(-1rem) scale(0.95) scaleX(-1);
+                transition: 0.5s ease-in-out;
+            }
+
+            .convertor_btn--i_left {
+                left: 15rem;
+                transform: translateX(-1rem) scale(0.95) scaleX(-1);
+                transition: 0.5s ease-in-out;
+            }
+        }
+
+        &--i_right {
+            position: absolute;
+            transform: scaleX(-1) ;
+            right: -10rem;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &--i_left {
+            position: absolute;
+            transform: scaleX(-1) ;
+            left: -10rem;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+
+.convertor-button:hover i.left-i {
+    left: 20%;
+    transform: translateX(1rem) scale(0.5);
+    transition: 0.5s ease-in-out;
+    bottom: -0.5rem;
+}
+
+.convertor-button i.right-i {
+    position: absolute;
+    transform: scaleX(-1) ;
+    font-size: 9rem;
+    right: -20%;
+    bottom: -0.25rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.convertor-button:hover i.right-i {
+    right: 20%;
+    transform: translateX(-1rem) scale(0.5) scaleX(-1);
+    transition: 0.5s ease-in-out;
+}
