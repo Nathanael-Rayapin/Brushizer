@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './style.scss';
 
 function About() {
@@ -12,46 +13,56 @@ function About() {
                         <div className="about_container_wrapper_cards">
 
                             <div className="about_container_wrapper_cards_item">
+                                <NavLink to='/collection'>
                                 <div className="about_container_wrapper_cards_item_unique">
                                     <p>Chaque Brushizer a été crée sans Candy Machine. Mezange a généré chaque NFT à la main sans utiliser de script. Les couleurs des backgrounds sont uniques à chaque NFT ce qui ajoute de la rareté à celui qui le detiens.</p>
                                     <div className="about_container_wrapper_cards_item_unique_content">
                                         <h2>UNIQUE NFT</h2>
-                                        <a href="/"><button className="about_container_wrapper_cards_item_unique_content--btn">Buy Now</button></a>
+                                        <button className="about_container_wrapper_cards_item_unique_content--btn"> Buy Now</button>
                                     </div>
                                 </div>
+                                </NavLink>
                             </div>
+                            
                             <div className="about_container_wrapper_cards_item">
+                                <NavLink to='/roadmap'>
                                 <div className="about_container_wrapper_cards_item_shop">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam asperiores sit, error
                                 doloremque laboriosam cumque obcaecati commodi aspernatur ut fugiat dolorem odit
                                 molestias eveniet quo! Minus reprehenderit ab necessitatibus dignissimos ex dolor?</p>
                                     <div className="about_container_wrapper_cards_item_shop_content">
                                         <h2>SHOP</h2>
-                                        <a href="/"><button className="about_container_wrapper_cards_item_shop_content--btn">Soon 2024</button></a>
+                                        <button className="about_container_wrapper_cards_item_shop_content--btn">Soon 2024</button>
                                     </div>
                                 </div>
+                                </NavLink>
                             </div>
+                            
                             <div className="about_container_wrapper_cards_item">
+                                <NavLink to='/roadmap'>
                                 <div className="about_container_wrapper_cards_item_social">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam asperiores sit, error
                                 doloremque laboriosam cumque obcaecati commodi aspernatur ut fugiat dolorem odit
                                 molestias eveniet quo! Minus reprehenderit ab necessitatibus dignissimos ex dolor?</p>
                                     <div className="about_container_wrapper_cards_item_social_content">
                                         <h2>SOCIAL</h2>
-                                        <a href="/"><button className="about_container_wrapper_cards_item_social_content--btn">2024 - 2025</button></a>
+                                        <button className="about_container_wrapper_cards_item_social_content--btn">2024 - 2025</button>
                                     </div>
                                 </div>
+                                </NavLink>
                             </div>
                             <div className="about_container_wrapper_cards_item">
+                                <NavLink to='/charity'>
                                 <div className="about_container_wrapper_cards_item_charity">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam asperiores sit, error
                                 doloremque laboriosam cumque obcaecati commodi aspernatur ut fugiat dolorem odit
                                 molestias eveniet quo! Minus reprehenderit ab necessitatibus dignissimos ex dolor?</p>
                                     <div className="about_container_wrapper_cards_item_charity_content">
                                         <h2>CHARITY</h2>
-                                        <a href="/"><button className="about_container_wrapper_cards_item_charity_content--btn">2024 - 2025</button></a>
+                                        <a href="/"><button className="about_container_wrapper_cards_item_charity_content--btn">Read more</button></a>
                                     </div>
                                 </div>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
