@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { useState } from 'react'
-import { Accordion, Menu } from 'semantic-ui-react';
+import { Accordion, Menu, Icon } from 'semantic-ui-react';
 import { buildCollectionsCard, sortPrice } from './ContentAccordion/Utils/Collections/FunctionsCollections';
 import ContentAccordion from './ContentAccordion/ContentAccordion';
 
@@ -77,12 +77,28 @@ function Attributes(props) {
             </Accordion>
         </div>
         <div className='filter_gallery'>
-            { collections.length ? buildCollectionsCard(collections) : 
-              <div className="ui grid container filter_gallery-not-available">
-                <p className="eight wide">
+          <div className='filter_gallery_tags'>
+
+                      <div className='filter_gallery_tags--tag'>Blue <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
+
+                      <div className='filter_gallery_tags--tag'>001 <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
+
+                      <button className='filter_gallery_tags_button'>
+                        <Icon 
+                        className='filter_gallery_tags_button--icon' 
+                        name='undo' 
+                        size='large' />
+                      </button>
+
+          </div>
+          <div className='filter_gallery_items'>
+          { collections.length ? buildCollectionsCard(collections) : 
+            <div className="ui grid container filter_gallery-not-available">
+               <p className="eight wide">
                   Aucun Artwork trouver pour cette recherche
-                </p>
-              </div> }
+              </p>
+            </div> }
+          </div>
         </div>
       </Fragment>
       );

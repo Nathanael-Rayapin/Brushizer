@@ -14,7 +14,7 @@ function Filter() {
     
     return (
         <div className='filter_container'>
-            <div className='filter_menu'>
+            <div>
                 <MenuCollection 
                 onSetPriceLabel={setPriceLabel} />
             </div>

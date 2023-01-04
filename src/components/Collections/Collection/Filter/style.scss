@@ -3,7 +3,7 @@
 .filter_container{
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem;
+    padding: 2rem 0rem;
     background-color: v.$third-color;
 }
 
@@ -12,8 +12,9 @@
     height: auto;
     max-height: 900px;
     background-color: v.$second-color;
-    border-top-left-radius: 1.2rem;
-    border-bottom-left-radius: 1.2rem;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-right: 4px;
+    scrollbar-width: none;
+    border-bottom: 4px solid v.$fourth-color;
 }

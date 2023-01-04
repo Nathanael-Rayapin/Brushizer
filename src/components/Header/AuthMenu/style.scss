@@ -9,6 +9,7 @@
        display: flex;
        justify-content: space-around;
        gap: 1rem;
+       transition: background-color 0.9s ease 0s, color 0.5s ease 0s, box-shadow 0.9s ease 0s;
        &-btn {
             padding: 0.85rem 1rem;
             color: v.$first-color;
@@ -18,7 +19,6 @@
             font-weight: 600;
             font-size: 1rem;
             border: 2px solid v.$first-color;
-            transition: background-color 0.9s ease 0s;
        }
     }
 
@@ -26,11 +26,12 @@
             color: v.$first-color;
             background-color: v.$fourth-color;
             border: 2px solid v.$first-color;
+            transition: background-color 0.9s ease 0s, color 0.5s ease 0s, box-shadow 0.9s ease 0s;
             &:hover {
                 color: v.$first-color;
                 box-shadow: v.$third-color 1px 1px 40px 2px;
                 background: v.$third-color repeat scroll 0% 0%;
-                transition: background-color 0.5s ease 0s;
+                transition: background-color 0.9s ease 0s, color 0.5s ease 0s, box-shadow 0.9s ease 0s;
             }
         }
 
@@ -38,11 +39,12 @@
             color: v.$second-color;
             background-color: v.$first-color;
             border: 2px solid v.$first-color;
+            transition: background-color 0.9s ease 0s, color 0.5s ease 0s, box-shadow 0.9s ease 0s;
             &:hover {
                 color: v.$fourth-color;
                 box-shadow: v.$third-color 1px 1px 40px 2px;
                 background: v.$bonus-color repeat scroll 0% 0%;
-                transition: background-color 0.5s ease 0s;
+                transition: background-color 0.9s ease 0s, color 0.5s ease 0s, box-shadow 0.9s ease 0s;
             }
         }
 }

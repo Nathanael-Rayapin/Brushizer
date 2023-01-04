@@ -20,11 +20,7 @@ const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
                 }}
                 keyboardControl= {true}
                 grabCursor={true}
-<<<<<<< HEAD
-                mousewheel= {true} 
-=======
                 mousewheel= {true}
->>>>>>> d57a5b8b363f67d4363882346d32c2063a910737
                 breakpoints={{
                     1700: {
                         slidesPerView: 5,
