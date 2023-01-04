@@ -11,6 +11,11 @@
     background-color: v.$third-color;
     overflow: hidden;
     margin: 1rem;
+    transition: box-shadow 0.8s;
+    &:hover {
+            box-shadow: v.$third-color 1px 1px 30px 2px;
+            transition: box-shadow 0.8s;
+    }
 
     &_img {
         width: 100%;
@@ -47,7 +52,7 @@
         &:hover {
             color: v.$fourth-color;
             transition: .4s ease-in-out;
-            background-color: v.$first-color;
+            background-color: v.$second-color;
         }
         
         .solana {
