@@ -75,7 +75,7 @@ const Timeline = ({ setObserver, callback }) => {
       setObserver(circle6.current, someCallback6);
       
       window.scrollTo(0, 0);
-    }, []);
+    });
   
     return (
       <div className="road-map_wrapper">

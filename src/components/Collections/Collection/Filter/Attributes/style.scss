@@ -6,6 +6,9 @@
 }
 
 .filter_attributes {
+    position: sticky;
+    top: 0;
+
     &_accordion {
         font-weight: 700;
         background-color: v.$fourth-color;
@@ -28,10 +31,11 @@
 .filter_gallery {
     width: 100%;
     display: flex;
+    align-self: flex-start;
+    justify-content: flex-start;
     align-items: center;
     padding: 4rem 2rem 0;
     flex-wrap: wrap;
-    overflow: auto;
 
     &-not-available p {
         text-align: center;
