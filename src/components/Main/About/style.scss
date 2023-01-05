@@ -10,25 +10,28 @@
     overflow: hidden;
 
     &_title {
-        padding: 2% 6% 4%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 4rem;
         color: v.$first-color;
 
         h2 {
             font-size: 4rem;
             font-weight: 600;
-            text-align: right;
         }
 
         span {
             background-color: v.$second-color;
+            padding-right: 1rem;
+            padding-left: 1rem;
         }
     }
     &_container {
         display: flex;
-        padding: 6% 0% 6% 6%;
+        padding: 12rem 0 9rem 9rem;
         border-top: 0.5rem dashed v.$second-color;
-        border-radius: 400px 200px 0 0;
-        margin: 0 0 5% 0;
+        border-radius: 300px 300px 0 0;
         &_wrapper {
             width: 60%;
             display: flex;
@@ -465,5 +468,80 @@
                 transition: all 1s ease 0s;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1500px) { 
+    .about {
+        &_container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 0 4rem;
+            &_wrapper {
+                width: 70%;
+            }
+
+            &_image {
+                display: none;
+            }
+        }  
+    }
+}
+
+@media screen and (max-width: 994px) { 
+    .about {
+        &_container {
+            &_wrapper {
+                width: 100%;
+                &_cards {
+                    
+                }
+            }
+        }  
+    }
+}
+
+@media screen and (max-width: 994px) { 
+    .about {
+        &_container {
+            &_wrapper {
+                width: 100%;
+                &_cards {
+                    gap: 2rem;
+                }
+            }
+        }  
+    }
+}
+
+@media screen and (max-width: 390px) { 
+    .about {
+        &_container {
+            &_wrapper {
+                &_cards {
+                    &_item {
+                        &_unique {
+                            width: 300px;
+                            height: 400px;
+                        }
+                        &_shop {
+                            width: 300px;
+                            height: 400px;
+                        }
+
+                        &_social {
+                            width: 300px;
+                            height: 400px;
+                        }
+                        
+                        &_charity {
+                            width: 300px;
+                            height: 400px;
+                        }
+                    }
+                }
+            }
+        }  
     }
 }
