@@ -89,7 +89,7 @@
         &_header { 
             padding: 0 4rem;
             &-title {
-                font-size: 2rem;
+                font-size: 3rem;
             }
     
             &-options {
@@ -103,6 +103,9 @@
     .last {
         &_header {
             padding: 0 2rem;
+            &-title {
+                font-size: 3rem;
+            }
             &-options {
                 gap: 1rem;
             }
@@ -110,10 +113,13 @@
     }
 }
 
-@media screen and (max-width: 320px) { 
+@media screen and (max-width: 400px) { 
     .last {
         &_header {
             padding: 0 1rem;
+            &-title {
+                font-size: 2rem;
+            }
             &-options {
                 gap: 0.5rem;
             }
