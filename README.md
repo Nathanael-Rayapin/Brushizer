@@ -23,13 +23,13 @@ Le but du projet Brushizer est de proposer aux artistes un accompagnement techni
 2 - Lorsque vous êtes sur le projet, installez toutes les dépendances en exécutant depuis le terminal :
 
 ```sh
-npm install
+yarn install
 ```
 
 3 - Puis lancer le server en faisant :
 
 ```sh
-npm start
+yarn start
 ```
 
 ## Objectifs à long terme
