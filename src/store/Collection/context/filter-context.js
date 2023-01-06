@@ -1,9 +1,10 @@
 import React from 'react';
 
 const FilterContext = React.createContext({
-    checkboxStateShp: false,
-    checkboxStateBgd: false,
-    checkboxStateShc: false,
+    teste: 0,
+    checkboxStateShp: [],
+    checkboxStateBgd: [],
+    checkboxStateShc: [],
     checkboxChange: () => {},
     checkboxesReset: () => {}
 });

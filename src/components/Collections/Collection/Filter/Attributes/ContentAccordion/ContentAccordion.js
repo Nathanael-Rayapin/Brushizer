@@ -78,7 +78,7 @@ const ContentAccordion = (props) => {
                 name={shape.name}
                 value={shape.value}
                 checked={filterCtx.checkboxStateShp[shape.id]}
-                onChange={(event, {checked}) => manageCollections(event, checked, props.value)} />
+                onChange={(event, {checked}) => manageCollections(event, checked, props.value, shape.id)} />
                 )
               }
             )}
@@ -104,7 +104,7 @@ const ContentAccordion = (props) => {
                 name={shapecolor.name}
                 value={shapecolor.value}
                 checked={filterCtx.checkboxStateShc[shapecolor.id]}
-                onChange={(event, {checked}) => manageCollections(event, checked, props.value)} />
+                onChange={(event, {checked}) => manageCollections(event, checked, props.value, shapecolor.id)} />
                 )
               }
             )}

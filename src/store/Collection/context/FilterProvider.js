@@ -1,41 +1,49 @@
-import { useState } from "react";
+import { useReducer, useEffect } from "react";
 import { ShapeOptions, BackgroundOptions, ShapecolorOptions } from "../data/data";
 import FilterContext from './filter-context';
 
+const defaultChekboxState = {
+    checkboxStateShp: new Array(ShapeOptions.length).fill(false),
+    checkboxStateBgd: new Array(BackgroundOptions.length).fill(false),
+    checkboxStateShc: new Array(ShapecolorOptions.length).fill(false)
+};
+
+const checkboxReducer = (state, action) => {
+    if (action.type === 'SHAPE') {
+        state.checkboxStateShp[action.payload] = !state.checkboxStateShp[action.payload];
+    };
+    if (action.type === 'BACKGROUND') {
+        state.checkboxStateBgd[action.payload] = !state.checkboxStateBgd[action.payload];
+    };
+    if (action.type === 'SHAPE_COLOR') {
+        state.checkboxStateShc[action.payload] = !state.checkboxStateShc[action.payload];
+    };
+    if (action.type === 'RESET') {
+        return {
+            ...state,
+            checkboxStateShp: (state.checkboxStateShp).fill(false),
+            checkboxStateBgd: (state.checkboxStateBgd).fill(false),
+            checkboxStateShc: (state.checkboxStateShc).fill(false)
+        }
+    };
+    return defaultChekboxState;
+};
+
 const FilterProvider = props => {
-    const [shapeIsChecked, setShapeIsChecked] = useState(
-        new Array(ShapeOptions.length).fill(false)
-    );
-
-    const [backgroundIsChecked, setBackgroundIsChecked] = useState(
-        new Array(BackgroundOptions.length).fill(false)
-    );
-
-    const [shapeColorIsChecked, setShapeColorIsChecked] = useState(
-        new Array(ShapecolorOptions).fill(false)
-    );
+    const [checkboxState, dispatchCheckboxAction] = useReducer(checkboxReducer, defaultChekboxState);
 
     const checkboxChangeHandler = (title, position) => {
         switch (title) {
             case 'shape':
-            const updatedShapeState = shapeIsChecked.map((item, index) =>
-            index === position ? !item : item
-            );
-            setShapeIsChecked(updatedShapeState);
+            dispatchCheckboxAction({type: 'SHAPE', payload: position});
             break;
 
             case 'background':
-            const updatedBackgroundState = backgroundIsChecked.map((item, index) =>
-            index === position ? !item : item
-            );
-            setBackgroundIsChecked(updatedBackgroundState);
+            dispatchCheckboxAction({type: 'BACKGROUND', payload: position});
             break;
 
             case 'shape_color':
-            const updatedShapeColorState = shapeColorIsChecked.map((item, index) =>
-            index === position ? !item : item
-            );   
-            setShapeColorIsChecked(updatedShapeColorState); 
+            dispatchCheckboxAction({type: 'SHAPE_COLOR', payload: position});
             break;
             
             default:
@@ -44,15 +52,13 @@ const FilterProvider = props => {
     };
 
     const checkboxesResetHandler = () => {
-        setShapeIsChecked(new Array(ShapeOptions.length).fill(false));
-        setBackgroundIsChecked(new Array(BackgroundOptions.length).fill(false));
-        setShapeColorIsChecked(new Array(ShapecolorOptions).fill(false));
+        dispatchCheckboxAction({type: 'RESET', payload: 0});
     };
 
     const filterContext = {
-        checkboxStateShp: shapeIsChecked,
-        checkboxStateBgd: backgroundIsChecked,
-        checkboxStateShc: shapeColorIsChecked,
+        checkboxStateShp: checkboxState.checkboxStateShp,
+        checkboxStateBgd: checkboxState.checkboxStateBgd,
+        checkboxStateShc: checkboxState.checkboxStateShc,
         checkboxChange: checkboxChangeHandler,
         checkboxesReset: checkboxesResetHandler
     };
