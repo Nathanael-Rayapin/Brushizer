@@ -2,9 +2,9 @@
 import { useState } from 'react';
 import Attributes from './Attributes/Attributes';
 import MenuCollection from './MenuCollection/MenuCollection';
-import FilterProvider from '../../../../context/Collections/FilterProvider';
+import FilterProvider from '../../../../store/Collection/context/FilterProvider';
 
-import './style.scss'
+import './style.scss';
 
 function Filter() {
     const [labelValue, setLabelValue] = useState('Price low to high');

@@ -1,5 +1,5 @@
 /* COMPONENTS */
-import React from "react";
+import React, { Fragment } from "react";
 import Header from '../../Header/Header';
 import Footer from '../../Footer/Footer';
 import Filter from '../Collection/Filter/Filter'
@@ -9,7 +9,7 @@ import './style.scss'
 
 function Collection() {
     return (
-        <>
+        <Fragment>
             <Header />
             <section className='collection_section'>
                 <div className='collection_section_wrapper'>
@@ -98,8 +98,8 @@ function Collection() {
 
             </section>
             <Footer />
-        </>
+        </Fragment>
     );
-}
+};
 
 export default Collection;

@@ -1,7 +1,6 @@
-import { Fragment  } from 'react';
-import { useState } from 'react'
+import { Fragment, useState } from 'react';
 import { Accordion, Menu, Icon } from 'semantic-ui-react';
-import { buildCollectionsCard, sortPrice } from './ContentAccordion/Utils/Collections/FunctionsCollections';
+import { buildCollectionsCard, sortPrice } from '../../../../../store/Collection/function/function';
 import ContentAccordion from './ContentAccordion/ContentAccordion';
 
 import artworks from '../../../../../data/artworks.json';

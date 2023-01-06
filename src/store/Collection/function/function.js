@@ -1,4 +1,4 @@
-import Card from "../../../../../../../UI/Card/Card";
+import Card from "../../../components/UI/Card/Card";
 
 // Add new Collection when Checked
 export function addToCollection(artworks, activesForms) {
@@ -11,6 +11,7 @@ export function addToCollection(artworks, activesForms) {
     const filteredLevelOne = artworks.filter((artwork) => (
       artwork.attributes[active.form] === active.value
     ));
+    
     availableArtworks.push(...filteredLevelOne);
     availableForms.push(active.form);
     });

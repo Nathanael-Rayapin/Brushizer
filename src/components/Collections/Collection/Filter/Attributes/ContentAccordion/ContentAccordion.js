@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useContext, useEffect } from 'react';
 import { Form } from 'semantic-ui-react';
-import { addToCollection, removeActiveForms } from './Utils/Collections/FunctionsCollections';
-import { shapeOptions, backgroundOptions, shapecolorOptions } from './Utils/Options/ArtworksOptions';
+import { addToCollection, removeActiveForms } from '../../../../../../store/Collection/function/function';
+import { ShapeOptions, BackgroundOptions, ShapecolorOptions } from '../../../../../../store/Collection/data/data';
 
-import FilterContext from '../../../../../../context/Collections/filter-context';
+import FilterContext from '../../../../../../store/Collection/context/filter-context';
 import artworks from '../../../../../../data/artworks.json';
 
 const ContentAccordion = (props) => {
@@ -70,7 +70,7 @@ const ContentAccordion = (props) => {
     return(
         <Form>
           <Form.Group grouped>
-          {(props.value === 'shape') && shapeOptions.map((shape) => {
+          {(props.value === 'shape') && ShapeOptions.map((shape) => {
                 return (
                 <Form.Checkbox 
                 key={shape.id} 
@@ -83,7 +83,7 @@ const ContentAccordion = (props) => {
               }
             )}
 
-            {(props.value === 'background') && backgroundOptions.map((background) => {
+            {(props.value === 'background') && BackgroundOptions.map((background) => {
                 return (
                 <Form.Checkbox 
                 key={background.id} 
@@ -96,7 +96,7 @@ const ContentAccordion = (props) => {
               }
             )}
 
-            {(props.value === 'shape_color') && shapecolorOptions.map((shapecolor) => {
+            {(props.value === 'shape_color') && ShapecolorOptions.map((shapecolor) => {
                 return (
                 <Form.Checkbox 
                 key={shapecolor.id} 

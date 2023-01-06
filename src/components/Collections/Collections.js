@@ -1,14 +1,12 @@
-/* COMPONENTS */
+import { Fragment } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 import './style.scss'
 
-
 function Collections() {
-
     return (
-        <>
+        <Fragment>
             <Header />
             <section className='collections_section'>
                 <div className='collections_section_title'>Our <span>Collections </span></div>
@@ -16,7 +14,8 @@ function Collections() {
                 <div className='collections_list'>
 
                     <div className='collections_list_item'>
-                        <div className='collections_list_item_artist'>BRUSHIZER
+                        <div className='collections_list_item_artist'>
+                            BRUSHIZER
                         </div>
                         <div className='collections_list_item_images'>
                             <img className='collections_list_item_images-img001' src='./assets/artworks/001.png' alt='artwork' />
@@ -25,7 +24,8 @@ function Collections() {
                     </div>
 
                     <div className='collections_list_item'>
-                        <div className='collections_list_item_artist'>Revolution
+                        <div className='collections_list_item_artist'>
+                            Revolution
                         </div>
                         <div className='collections_list_item_images'>
                             <img className='collections_list_item_images-img001' src='./assets/artworks/003.png' alt='artwork' />
@@ -34,7 +34,8 @@ function Collections() {
                     </div>
 
                     <div className='collections_list_item'>
-                        <div className='collections_list_item_artist'>infinity
+                        <div className='collections_list_item_artist'>
+                            infinity
                         </div>
                         <div className='collections_list_item_images'>
                             <img className='collections_list_item_images-img001' src='./assets/artworks/005.png' alt='artwork' />
@@ -43,7 +44,8 @@ function Collections() {
                     </div>
 
                     <div className='collections_list_item'>
-                        <div className='collections_list_item_artist'>destinity
+                        <div className='collections_list_item_artist'>
+                            destinity
                         </div>
                         <div className='collections_list_item_images'>
                             <img className='collections_list_item_images-img001' src='./assets/artworks/007.png' alt='artwork' />
@@ -55,8 +57,8 @@ function Collections() {
 
             </section>
             <Footer />
-        </>
+        </Fragment>
     );
-}
+};
 
 export default Collections;

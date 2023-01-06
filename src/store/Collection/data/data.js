@@ -1,4 +1,13 @@
-export const shapeOptions = [
+export const SortByOptions = [
+    {
+        value: '1', text: "Price low to high"
+    },
+    {
+        value: '2', text: "Price high to low"
+    }
+];
+
+export const ShapeOptions = [
     { id: 0, label: '001', name: '#001', value: '001' },
     { id: 1, label: '002', name: '#002', value: '002' },
     { id: 2, label: '003', name: '#003', value: '003' },
@@ -17,7 +26,7 @@ export const shapeOptions = [
     { id: 15, label: '016', name: '#016', value: '016' }
 ];
 
-export const backgroundOptions = [
+export const BackgroundOptions = [
     {  id: 0, label: 'Blue', name: '#bg-blue', value: 'blue' },
     {  id: 1, label: 'White', name: '#bg-white', value: 'white' },
     {  id: 2, label: 'Gold', name: '#bg-gold', value: 'gold' },
@@ -30,7 +39,7 @@ export const backgroundOptions = [
     {  id: 9, label: 'Orange', name: '#bg-orange', value: 'orange' }
 ];
 
-export const shapecolorOptions = [
+export const ShapecolorOptions = [
     { id: 0, label: 'Blue', name: '#sc-blue', value: 'blue' },
     { id: 1, label: 'White', name: '#sc-white', value: 'white' },
     { id: 2, label: 'Gold', name: '#sc-gold', value: 'gold' },
@@ -41,7 +50,3 @@ export const shapecolorOptions = [
     { id: 7, label: 'Purple', name: '#sc-purple', value: 'purple' },
     { id: 8, label: 'Orange', name: '#sc-orange', value: 'orange' }
 ];
-
-
-
-export default backgroundOptions;

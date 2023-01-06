@@ -8,7 +8,7 @@
             background-color: v.$third-color;
             padding: 3rem 2rem 0rem;
             gap: 1rem;
-        }
+        };
 
         &_infos {
             display: flex;
@@ -36,7 +36,7 @@
                             background-size: contain;
                             background-repeat: no-repeat;
                             background-image: url("../../../../public/assets/nft/009.png");
-                        }
+                        };
                         &_name{
                             &_container {
                                 display: flex;
@@ -53,9 +53,9 @@
                                         cursor: pointer;
                                         color: v.$fourth-color;
                                         transition: color 1s ease 0s;
-                                    }
-                                }
-                            }
+                                    };
+                                };
+                            };
 
                             &_by {
                                 display: flex;
@@ -78,11 +78,11 @@
                                         font-size: 1.5rem;
                                         font-weight: 400;
                                         color: v.$third-color;
-                                    }
-                                }
-                            } 
-                        }
-                }
+                                    };
+                                };
+                            } ;
+                        };
+                };
 
                 &_stats {
                     display: flex;
@@ -102,13 +102,13 @@
                             &--title {
                                 font-size: 1.2rem;
                                 font-weight: 800;
-                            }
+                            };
 
                             &--number {
                                 font-size: 1.5rem;
                                 font-weight: 300;
-                            }
-                        }
+                            };
+                        };
 
                         &-volume {
                             display: flex;
@@ -123,13 +123,13 @@
                             &--title {
                                 font-size: 1.2rem;
                                 font-weight: 800;
-                            }
+                            };
 
                             &--number {
                                 font-size: 1.5rem;
                                 font-weight: 300;
-                            }
-                        }
+                            };
+                        };
 
                         &-floor {
                             display: flex;
@@ -144,13 +144,13 @@
                             &--title {
                                 font-size: 1.2rem;
                                 font-weight: 800;
-                            }
+                            };
 
                             &--number {
                                 font-size: 1.5rem;
                                 font-weight: 300;
-                            }
-                        }
+                            };
+                        };
 
                         &-floorDollar {
                             display: flex;
@@ -165,17 +165,17 @@
                             &--title {
                                 font-size: 1.2rem;
                                 font-weight: 800;
-                            }
+                            };
 
                             &--number {
                                 font-size: 1.5rem;
                                 font-weight: 300;
-                            }
-                        }
+                            };
+                        };
 
                         
-                }
-        }
+                };
+        };
 
         &_description {
             display: flex;
@@ -196,7 +196,7 @@
                 padding-bottom: 0.8rem;
                 font-size: 2.4rem;
                 border-bottom: 2px solid v.$second-color;
-            }
+            };
 
             &--text {
                 font-weight: 400;
@@ -205,9 +205,6 @@
                 text-align: justify;
                 color: v.$first-color;
                 text-overflow: ellipsis;
-            }
-        }
-
-        
-       
-}
+            };
+        };
+};

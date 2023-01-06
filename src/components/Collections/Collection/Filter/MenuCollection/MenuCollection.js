@@ -1,15 +1,13 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { Icon, Menu, Search, Dropdown } from 'semantic-ui-react'
 
-import FilterContext from '../../../../../context/Collections/filter-context';
-import sortOptions from './Filter/Utils/Options/SortByOptions';
+import FilterContext from '../../../../../store/Collection/context/filter-context';
+import { SortByOptions } from '../../../../../store/Collection/data/data';
 
-import './style.scss'
+import './style.scss';
 
 function MenuCollection(props) {
     const filterCtx = useContext(FilterContext);
-
-    const [searchCollection, setSearch] = useState('');
 
     function onFilteredPrice(event) {
         props.onSetPriceLabel(event.target.textContent);
@@ -25,15 +23,13 @@ function MenuCollection(props) {
             <Search
             className='filter_menu_search'
             input={{ icon: 'search', iconPosition: 'left' }}
-            placeholder="Search in collection ..."
-            value={searchCollection}
-            onSearchChange={(e, { value }) => setSearch(value)} />
+            placeholder="Search in collection ..." />
             <Dropdown 
             className='filter_menu_dropdown' 
             defaultValue={"1"} 
             selection 
             fluid 
-            options={sortOptions}
+            options={SortByOptions}
             onChange={onFilteredPrice} />
             <button className='filter_menu_button' onClick={onResetHandler}>
                 <Icon 

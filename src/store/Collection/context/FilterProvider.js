@@ -1,19 +1,18 @@
 import { useState } from "react";
+import { ShapeOptions, BackgroundOptions, ShapecolorOptions } from "../data/data";
 import FilterContext from './filter-context';
-
-import { shapeOptions, backgroundOptions, shapecolorOptions } from "../../components/Collections/Collection/Filter/Attributes/ContentAccordion/Utils/Options/ArtworksOptions";
 
 const FilterProvider = props => {
     const [shapeIsChecked, setShapeIsChecked] = useState(
-        new Array(shapeOptions.length).fill(false)
+        new Array(ShapeOptions.length).fill(false)
     );
 
     const [backgroundIsChecked, setBackgroundIsChecked] = useState(
-        new Array(backgroundOptions.length).fill(false)
+        new Array(BackgroundOptions.length).fill(false)
     );
 
     const [shapeColorIsChecked, setShapeColorIsChecked] = useState(
-        new Array(shapecolorOptions).fill(false)
+        new Array(ShapecolorOptions).fill(false)
     );
 
     const checkboxChangeHandler = (title, position) => {
@@ -22,33 +21,32 @@ const FilterProvider = props => {
             const updatedShapeState = shapeIsChecked.map((item, index) =>
             index === position ? !item : item
             );
-          
             setShapeIsChecked(updatedShapeState);
             break;
+
             case 'background':
             const updatedBackgroundState = backgroundIsChecked.map((item, index) =>
             index === position ? !item : item
             );
-              
             setBackgroundIsChecked(updatedBackgroundState);
             break;
+
             case 'shape_color':
             const updatedShapeColorState = shapeColorIsChecked.map((item, index) =>
             index === position ? !item : item
-            );
-                  
+            );   
             setShapeColorIsChecked(updatedShapeColorState); 
             break;
+            
             default:
-
             break;
         };
     };
 
     const checkboxesResetHandler = () => {
-        setShapeIsChecked(new Array(shapeOptions.length).fill(false));
-        setBackgroundIsChecked(new Array(backgroundOptions.length).fill(false));
-        setShapeColorIsChecked(new Array(shapecolorOptions).fill(false));
+        setShapeIsChecked(new Array(ShapeOptions.length).fill(false));
+        setBackgroundIsChecked(new Array(BackgroundOptions.length).fill(false));
+        setShapeColorIsChecked(new Array(ShapecolorOptions).fill(false));
     };
 
     const filterContext = {
