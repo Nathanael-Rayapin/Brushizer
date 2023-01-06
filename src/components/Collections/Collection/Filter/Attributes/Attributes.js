@@ -77,20 +77,18 @@ function Attributes(props) {
             </Accordion>
         </div>
         <div className='filter_gallery'>
+          {/* Tags Button */}
           <div className='filter_gallery_tags'>
-
-                      <div className='filter_gallery_tags--tag'>Blue <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
-
-                      <div className='filter_gallery_tags--tag'>001 <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
-
-                      <button className='filter_gallery_tags_button'>
-                        <Icon 
-                        className='filter_gallery_tags_button--icon' 
-                        name='undo' 
-                        size='large' />
-                      </button>
-
+            <div className='filter_gallery_tags--tag'>Blue <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
+            <div className='filter_gallery_tags--tag'>001 <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
+            <button className='filter_gallery_tags_button'>
+              <Icon 
+              className='filter_gallery_tags_button--icon' 
+              name='undo' 
+              size='large'/>
+            </button>
           </div>
+          {/* Artworks Gallery */}
           <div className='filter_gallery_items'>
           { collections.length ? buildCollectionsCard(collections) : 
             <div className="ui grid container filter_gallery-not-available">

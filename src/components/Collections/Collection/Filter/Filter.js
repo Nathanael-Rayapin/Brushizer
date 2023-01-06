@@ -14,17 +14,16 @@ function Filter() {
     
     return (
         <div className='filter_container'>
-            <div>
+            <div className='filter_container-menu'>
                 <MenuCollection 
                 onSetPriceLabel={setPriceLabel} />
             </div>
-            <div className='filter_wrapper'>
+            <div className='filter_container-attributes'>
                 <Attributes 
                 onSortByPrice={labelValue} />
             </div>
         </div>
-        
-      )
-}   
+      );
+};
 
 export default Filter;

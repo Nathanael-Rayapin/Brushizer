@@ -34,7 +34,6 @@ function MenuCollection(props) {
                 name='undo' 
                 size='large' />
             </button>
-            
         </Menu>     
     );
 };

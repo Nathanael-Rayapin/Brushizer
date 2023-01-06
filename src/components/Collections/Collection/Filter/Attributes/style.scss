@@ -7,8 +7,10 @@
 
 .filter_attributes {
     position: sticky;
-    top: 0;
-
+    top: 90px;
+    align-self: flex-start;
+    height: calc(100vh - 103.5px);
+    z-index: 9;
 
     &_accordion {
         font-weight: 700;
@@ -32,6 +34,7 @@
 }
 
 .filter_gallery {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
