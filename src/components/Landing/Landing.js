@@ -11,11 +11,11 @@ function Main() {
     return (
         <main className='main'>
             <Hero />
-            <Convertor />
-            <Partners />
-            <LastSale />
             <About />
             <Stats />
+            <Partners />
+            <LastSale />
+            <Convertor />
         </main>
     );
 }

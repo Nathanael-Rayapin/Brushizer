@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import './style.scss';
 
-import SaleCarouselItem from '../../../Main/LastSale/SaleCarousel/SaleCarouselItem/SaleCarouselItem';
+import SaleCarouselItem from '../../../Landing/LastSale/SaleCarousel/SaleCarouselItem/SaleCarouselItem';
 
 const SaleCarousel = ({ items, isAvailable, isDesktop }) => {
     return (
