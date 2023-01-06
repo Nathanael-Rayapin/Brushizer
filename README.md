@@ -1,12 +1,4 @@
-# Brushizer
-
-Les technologies blockchain permettent de créer une forme de propriété digitale, en utilisant notamment les avantages de la blockchain (inaltérabilité, traçabilité) et ceux des NFT (unicité). Pour l’heure, ces technologies sont encore difficiles à appréhender pour les non initiés, particulièrement en ce qui concerne le mint de NFT.
-
-![alt Cover](./public/assets/artworks/woman.jpg)
-
-Le but du projet Brushizer est de proposer aux artistes un accompagnement technique sur ce sujet, de sorte qu’ils n’aient plus à se soucier de cette barrière technique, et puissent se concentrer pleinement sur leurs créations.
-
-## Technologies
+# BRUSHIZER
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
@@ -14,6 +6,12 @@ Le but du projet Brushizer est de proposer aux artistes un accompagnement techni
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+![alt Cover](./public/assets/artworks/001.png)
+
+Les technologies blockchain permettent de créer une forme de propriété digitale, en utilisant notamment les avantages de la blockchain (inaltérabilité, traçabilité) et ceux des NFT (unicité). Pour l’heure, ces technologies sont encore difficiles à appréhender pour les non initiés, particulièrement en ce qui concerne le mint de NFT.
+
+Le but du projet Brushizer est de proposer aux artistes un accompagnement technique sur ce sujet, de sorte qu’ils n’aient plus à se soucier de cette barrière technique, et puissent se concentrer pleinement sur leurs créations.
 
 ## Pour commencer
 
@@ -23,13 +21,13 @@ Le but du projet Brushizer est de proposer aux artistes un accompagnement techni
 2 - Lorsque vous êtes sur le projet, installez toutes les dépendances en exécutant depuis le terminal :
 
 ```sh
-npm install
+yarn install
 ```
 
 3 - Puis lancer le server en faisant :
 
 ```sh
-npm start
+yarn start
 ```
 
 ## Objectifs à long terme
