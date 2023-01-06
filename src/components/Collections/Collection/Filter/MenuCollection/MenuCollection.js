@@ -1,15 +1,22 @@
-/* COMPONENTS */
+import { useState, useContext } from 'react';
 import { Icon, Menu, Search, Dropdown } from 'semantic-ui-react'
-import { useState } from 'react';
+
+import FilterContext from '../../../../../context/Collections/filter-context';
 import sortOptions from './Filter/Utils/Options/SortByOptions';
 
 import './style.scss'
 
 function MenuCollection(props) {
+    const filterCtx = useContext(FilterContext);
+
     const [searchCollection, setSearch] = useState('');
 
     function onFilteredPrice(event) {
         props.onSetPriceLabel(event.target.textContent);
+    };
+
+    function onResetHandler() {
+        filterCtx.checkboxesReset();
     };
 
     return (
@@ -28,7 +35,7 @@ function MenuCollection(props) {
             fluid 
             options={sortOptions}
             onChange={onFilteredPrice} />
-            <button className='filter_menu_button'>
+            <button className='filter_menu_button' onClick={onResetHandler}>
                 <Icon 
                 className='filter_menu_button-icon' 
                 name='undo' 

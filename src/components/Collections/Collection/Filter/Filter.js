@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Attributes from './Attributes/Attributes';
 import MenuCollection from './MenuCollection/MenuCollection';
+import FilterProvider from '../../../../context/Collections/FilterProvider';
 
 import './style.scss'
 
@@ -13,16 +14,18 @@ function Filter() {
     };
     
     return (
-        <div className='filter_container'>
-            <div className='filter_container-menu'>
-                <MenuCollection 
-                onSetPriceLabel={setPriceLabel} />
-            </div>
+        <FilterProvider>
+            <div className='filter_container'>
+                <div className='filter_container-menu'>
+                    <MenuCollection 
+                    onSetPriceLabel={setPriceLabel} />
+                </div>
             <div className='filter_container-attributes'>
-                <Attributes 
-                onSortByPrice={labelValue} />
+                    <Attributes 
+                    onSortByPrice={labelValue} />
+                </div>
             </div>
-        </div>
+        </FilterProvider>
       );
 };
 

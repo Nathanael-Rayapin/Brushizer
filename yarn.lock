@@ -1592,6 +1592,18 @@
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz"
   "version" "2.11.6"
 
+"@react-hooks-library/core@^0.4.1":
+  "integrity" "sha512-NlE0CiWEkWZM5qFlm7lHy7YDf1TwQtSSJs/ytG5quB38lDmvPdyzSY94Bm8bpKCDg6U0IlfHuAsQZlEGr1nkpg=="
+  "resolved" "https://registry.npmjs.org/@react-hooks-library/core/-/core-0.4.1.tgz"
+  "version" "0.4.1"
+  dependencies:
+    "@react-hooks-library/shared" "0.4.1"
+
+"@react-hooks-library/shared@0.4.1":
+  "integrity" "sha512-O914XO0HluPOQXlono9TriYBHc+UN3vLiRHkyS7cGHxapQb7ON0kDMeJZnsnFkg42keH+TJGakaLS0ghxyeI5Q=="
+  "resolved" "https://registry.npmjs.org/@react-hooks-library/shared/-/shared-0.4.1.tgz"
+  "version" "0.4.1"
+
 "@reduxjs/toolkit@^1.9.1":
   "integrity" "sha512-HikrdY+IDgRfRYlCTGUQaiCxxDDgM1mQrRbZ6S1HFZX5ZYuJ4o8EstNmhTwHdPl2rTmLxzwSu0b3AyeyTlR+RA=="
   "resolved" "https://registry.npmjs.org/@reduxjs/toolkit/-/toolkit-1.9.1.tgz"
@@ -7765,7 +7777,7 @@
   "resolved" "https://registry.npmjs.org/react-timeline-animation/-/react-timeline-animation-1.2.3.tgz"
   "version" "1.2.3"
 
-"react@^0.14.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0", "react@>=16.8", "react@>=16.8.0":
+"react@^0.14.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0", "react@>=16.8", "react@>=16.8.0", "react@>=16.9.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

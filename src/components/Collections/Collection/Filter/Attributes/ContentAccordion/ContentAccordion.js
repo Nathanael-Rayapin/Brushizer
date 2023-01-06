@@ -1,14 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Form } from 'semantic-ui-react';
 import { addToCollection, removeActiveForms } from './Utils/Collections/FunctionsCollections';
 import { shapeOptions, backgroundOptions, shapecolorOptions } from './Utils/Options/ArtworksOptions';
 
+import FilterContext from '../../../../../../context/Collections/filter-context';
 import artworks from '../../../../../../data/artworks.json';
-import { useEffect } from 'react';
 
 const ContentAccordion = (props) => {
     const [useEffetChange, setUseEffetChange] = useState(false);
+    const filterCtx = useContext(FilterContext);
 
     // React to All Checkbox Changes
     useEffect(() => {
@@ -19,7 +20,9 @@ const ContentAccordion = (props) => {
     }, [useEffetChange]);
 
     // Manage Collections
-    function manageCollections(event, checked, formTitle) {
+    function manageCollections(event, checked, formTitle, index) {
+      filterCtx.checkboxChange(formTitle, index)
+
       switch (checked) {
         case true :
           const newForm = {};
@@ -74,6 +77,7 @@ const ContentAccordion = (props) => {
                 label={shape.label} 
                 name={shape.name}
                 value={shape.value}
+                checked={filterCtx.checkboxStateShp[shape.id]}
                 onChange={(event, {checked}) => manageCollections(event, checked, props.value)} />
                 )
               }
@@ -86,7 +90,8 @@ const ContentAccordion = (props) => {
                 label={background.label} 
                 name={background.name}
                 value={background.value}
-                onChange={(event, {checked}) => manageCollections(event, checked, props.value)} />
+                checked={filterCtx.checkboxStateBgd[background.id]}
+                onChange={(event, {checked}) => manageCollections(event, checked, props.value, background.id)} />
                 )
               }
             )}
@@ -98,6 +103,7 @@ const ContentAccordion = (props) => {
                 label={shapecolor.label} 
                 name={shapecolor.name}
                 value={shapecolor.value}
+                checked={filterCtx.checkboxStateShc[shapecolor.id]}
                 onChange={(event, {checked}) => manageCollections(event, checked, props.value)} />
                 )
               }
