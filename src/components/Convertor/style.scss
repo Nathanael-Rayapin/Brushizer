@@ -11,10 +11,10 @@
         flex-direction: column;
         width: 50%;
         border-radius: 60px 60px 60px 60px;
-        box-shadow: v.$third-color 1px 1px 80px 2px;
+        box-shadow: v.$second-color 1px 1px 80px 2px;
         transition: all 1s ease 0s;
             &:hover{
-            box-shadow: v.$second-color 1px 1px 80px 2px;
+            box-shadow: v.$third-color 1px 1px 80px 2px;
             transition: 0.8s;
             }
 

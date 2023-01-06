@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 
 /* Components */
 import Header from '../Header/Header';
-import Main from '../Main/Main';
+import Landing from '../Landing/Landing';
 import SignUp from '../SignUp/SignUp';
 import SignIn from '../SignIn/SignIn';
 import Footer from '../Footer/Footer';
@@ -31,7 +31,7 @@ function App() {
         <Route path='/' element={
           <>
             <Header />
-            <Main />
+            <Landing />
             <Footer />
           </>}
         />
