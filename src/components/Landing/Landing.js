@@ -1,4 +1,4 @@
-import Convertor from '../Convertor/Convertor';
+import Convert from '../Landing/Convert/Convert';
 import Hero from './Hero/Hero';
 import LastSale from './LastSale/LastSale';
 import Partners from './Partners/Partners';
@@ -7,17 +7,17 @@ import About from './About/About';
 
 import './style.scss'
 
-function Main() {
+function Landing() {
     return (
         <main className='main'>
             <Hero />
-            <Convertor />
-            <Partners />
-            <LastSale />
             <About />
             <Stats />
+            <Partners />
+            <LastSale />
+            <Convert />
         </main>
     );
 }
 
-export default Main;
+export default Landing;
