@@ -13,7 +13,7 @@ const ContentAccordion = (props) => {
 
     // React to All Checkbox Changes
     useEffect(() => {
-      if (props.getcount > 0) {
+      if (filterCtx.countState > 0) {
           const collections = addToCollection(artworks, filterCtx.formsState);
           filterCtx.collectionsChange(collections);
         }
@@ -26,11 +26,11 @@ const ContentAccordion = (props) => {
       switch (checked) {
         case true :
           const newForm = {};
-          newForm["id"] = props.getcount;
+          newForm["id"] = filterCtx.countState;
           newForm["value"] = (event.target.textContent).toLowerCase();
           newForm["form"] = formTitle;
 
-          if (props.getcount === 0) {
+          if (filterCtx.countState === 0) {
             filterCtx.addActivesForms(newForm)
             reactToChange("plus");
           } else {
@@ -39,7 +39,7 @@ const ContentAccordion = (props) => {
           }
         break;
         case false :
-          if (props.getcount === 1) {
+          if (filterCtx.countState === 1) {
             reusableUnchekedFunc(event, formTitle);
             filterCtx.collectionsChange(artworks);
           } else { 
@@ -62,8 +62,8 @@ const ContentAccordion = (props) => {
 
     // Force useEffect React to States
     function reactToChange(sign) {
-      if (sign === "plus") { props.setcount(props.getcount + 1) };
-      if (sign === "moins") { props.setcount(props.getcount - 1) };
+      if (sign === "plus") { filterCtx.countChange(filterCtx.countState + 1) };
+      if (sign === "moins") { filterCtx.countChange(filterCtx.countState - 1) };
       setUseEffetChange(!useEffetChange);
     };
 

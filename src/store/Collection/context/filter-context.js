@@ -8,13 +8,15 @@ const FilterContext = React.createContext({
     checkboxStateShc: [],
     collectionsState: [],
     formsState: [],
+    countState: 0,
     // Functions
     sortArtworkByPrice: () => {},
     checkboxChange: () => {},
     checkboxesReset: () => {},
     collectionsChange: () => {},
     addActivesForms: () => {},
-    removeActivesForms: () => {}
+    removeActivesForms: () => {},
+    countChange: () => {}
 });
 
 export default FilterContext;

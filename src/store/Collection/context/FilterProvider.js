@@ -11,63 +11,67 @@ const defaultChekboxState = {
     checkboxStateBgd: new Array(BackgroundOptions.length).fill(false),
     checkboxStateShc: new Array(ShapecolorOptions.length).fill(false),
     collectionsState: new Array(...artworks),
-    formsState: []
+    formsState: [],
+    countState: 0
 };
 
 // Actions Reducer
 const collectionReducer = (state, action) => {
-    if (action.type === 'SORT') {
-        return {
-            ...state,
-            sortArtworkState: action.payload
-        };
-    };
-    if (action.type === 'SHAPE') {
-        return {
-            ...state,
-            checkboxStateShp: !state.checkboxStateShp[action.payload]
-        };
-    };
-    if (action.type === 'BACKGROUND') {
-        return {
-            ...state,
-            checkboxStateBgd: !state.checkboxStateBgd[action.payload]
-        };
-    };
-    if (action.type === 'SHAPE_COLOR') {
-        return {
-            ...state,
-            checkboxStateShc: !state.checkboxStateShc[action.payload]
-        };
-    };
-    if (action.type === 'RESET') {
-        defaultChekboxState['sortArtworkState'] = state.sortArtworkState;
+    switch (action.type) {
+        case 'SORT':
+            return {
+                ...state,
+                sortArtworkState: action.payload
+            };
+        case 'SHAPE':
+            return {
+                ...state,
+                checkboxStateShp: !state.checkboxStateShp[action.payload]
+            };
+        case 'BACKGROUND':
+            return {
+                ...state,
+                checkboxStateBgd: !state.checkboxStateBgd[action.payload]
+            };
+        case 'SHAPE_COLOR':
+            return {
+                ...state,
+                checkboxStateShc: !state.checkboxStateShc[action.payload]
+            };
+        case 'RESET':
+            defaultChekboxState['sortArtworkState'] = state.sortArtworkState;
+            return defaultChekboxState;
+        case 'COLLECTION':
+            return {
+                ...state,
+                collectionsState: action.payload
+            };
+        case 'ADD_FORMS':
+            return {
+                ...state,
+                formsState: [...state.formsState, action.payload]
+            };
+        case 'REMOVE_FORMS':
+            const index = state.formsState.findIndex(object => {
+                return (
+                object.value === action.payload.checkboxValue
+                && object.form === action.payload.formsTitle
+                );
+            });
+            state.formsState.splice(index, 1);
+
+            return {
+                ...state,
+                formsState: state.formsState
+            };
+        case 'COUNT':
+            return {
+                ...state,
+                countState: action.payload
+            }
+        default:
         return defaultChekboxState;
     };
-    if (action.type === 'COLLECTION') {
-        return {
-            ...state,
-            collectionsState: action.payload
-        };
-    };
-    if (action.type === 'ADD_FORMS') {
-        return {
-            ...state,
-            formsState: [...state.formsState, action.payload]
-        };
-    };
-    if (action.type === 'REMOVE_FORMS') {
-        const index = state.formsState.findIndex(object => {
-            return (
-            object.value === action.payload.checkboxValue
-            && object.form === action.payload.formsTitle
-            );
-        });
-        return {
-            formsState: state.formsState.splice(index, 1)
-        };
-    };
-    return defaultChekboxState;
 };
 
 const FilterProvider = props => {
@@ -115,10 +119,14 @@ const FilterProvider = props => {
         dispatchCollectionAction(
             {
                 type: 'REMOVE_FORMS', 
-                action: {
+                payload: {
                     checkboxValue, 
                     formsTitle}
             });
+    };
+
+    const countChangeHandler = (count) => {
+        dispatchCollectionAction({type: 'COUNT', payload: count });
     };
 
     const filterContext = {
@@ -129,13 +137,15 @@ const FilterProvider = props => {
         checkboxStateShc: collectionState.checkboxStateShc,
         collectionsState: collectionState.collectionsState,
         formsState: collectionState.formsState,
+        countState: collectionState.countState,
         // Functions
         sortArtworkByPrice: sortArtworkByPriceHandler,
         checkboxChange: checkboxChangeHandler,
         checkboxesReset: checkboxesResetHandler,
         collectionsChange: collectionsChangeHandler,
         addActivesForms: addActivesFormsHandler,
-        removeActivesForms: removeActivesFormsHandler
+        removeActivesForms: removeActivesFormsHandler,
+        countChange: countChangeHandler
     };
 
     return(

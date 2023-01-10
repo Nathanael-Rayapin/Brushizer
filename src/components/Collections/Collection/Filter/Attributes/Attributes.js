@@ -8,9 +8,7 @@ import './style.scss';
 
 function Attributes() {
     const filterCtx = useContext(FilterContext);
-
     const [activeIndex, setActiveIndex] = useState(1);
-    const [count, setCount] = useState(0);
 
     // Sort Collections
     sortPrice(filterCtx.collectionsState, filterCtx.sortArtworkState);
@@ -33,9 +31,7 @@ function Attributes() {
                   <Accordion.Content 
                   active={activeIndex === 0} content={(
                     <ContentAccordion
-                    value={"shape"}
-                    getcount={count}
-                    setcount={setCount} />
+                    value={"shape"} />
                   )} />
                 </Menu.Item>
               {/* Background */}
@@ -45,9 +41,7 @@ function Attributes() {
                     <Accordion.Content 
                     active={activeIndex === 1} content={(
                       <ContentAccordion
-                      value={"background"}
-                      getcount={count}
-                      setcount={setCount} />
+                      value={"background"}/>
                     )} />
                 </Menu.Item>
               {/* Shape-Color */}
@@ -56,9 +50,7 @@ function Attributes() {
                     <Accordion.Content 
                     active={activeIndex === 2} content={(
                       <ContentAccordion
-                      value={"shape_color"}
-                      getcount={count}
-                      setcount={setCount} />
+                      value={"shape_color"} />
                     )} />
                 </Menu.Item>
             </Accordion>
