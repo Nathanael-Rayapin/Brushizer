@@ -1,12 +1,20 @@
 import React from 'react';
 
 const FilterContext = React.createContext({
-    teste: 0,
+    // Variables
+    sortArtworkState: '',
     checkboxStateShp: [],
     checkboxStateBgd: [],
     checkboxStateShc: [],
+    collectionsState: [],
+    formsState: [],
+    // Functions
+    sortArtworkByPrice: () => {},
     checkboxChange: () => {},
-    checkboxesReset: () => {}
+    checkboxesReset: () => {},
+    collectionsChange: () => {},
+    addActivesForms: () => {},
+    removeActivesForms: () => {}
 });
 
 export default FilterContext;

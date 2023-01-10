@@ -1,19 +1,19 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useContext } from 'react';
 import { Accordion, Menu, Icon } from 'semantic-ui-react';
 import { buildCollectionsCard, sortPrice } from '../../../../../store/Collection/function/function';
-import ContentAccordion from './ContentAccordion/ContentAccordion';
 
-import artworks from '../../../../../data/artworks.json';
+import FilterContext from '../../../../../store/Collection/context/filter-context';
+import ContentAccordion from './ContentAccordion/ContentAccordion';
 import './style.scss';
 
-function Attributes(props) {
+function Attributes() {
+    const filterCtx = useContext(FilterContext);
+
     const [activeIndex, setActiveIndex] = useState(1);
-    const [collections, setCollections] = useState(artworks);
-    const [activesForms, setActivesForms] = useState([]);
     const [count, setCount] = useState(0);
 
     // Sort Collections
-    sortPrice(collections, props.onSortByPrice);
+    sortPrice(filterCtx.collectionsState, filterCtx.sortArtworkState);
     
     // Handle Checkbox Index
     const handleIndex = (e, titleProps) => {
@@ -34,10 +34,6 @@ function Attributes(props) {
                   active={activeIndex === 0} content={(
                     <ContentAccordion
                     value={"shape"}
-                    getcollections={collections}
-                    setcollections={setCollections}
-                    getactiveforms={activesForms}
-                    setactiveforms={setActivesForms}
                     getcount={count}
                     setcount={setCount} />
                   )} />
@@ -50,10 +46,6 @@ function Attributes(props) {
                     active={activeIndex === 1} content={(
                       <ContentAccordion
                       value={"background"}
-                      getcollections={collections}
-                      setcollections={setCollections}
-                      getactiveforms={activesForms}
-                      setactiveforms={setActivesForms}
                       getcount={count}
                       setcount={setCount} />
                     )} />
@@ -65,10 +57,6 @@ function Attributes(props) {
                     active={activeIndex === 2} content={(
                       <ContentAccordion
                       value={"shape_color"}
-                      getcollections={collections}
-                      setcollections={setCollections}
-                      getactiveforms={activesForms}
-                      setactiveforms={setActivesForms}
                       getcount={count}
                       setcount={setCount} />
                     )} />
@@ -89,7 +77,7 @@ function Attributes(props) {
           </div>
           {/* Artworks Gallery */}
           <div className='filter_gallery_items'>
-          { collections.length ? buildCollectionsCard(collections) : 
+          { filterCtx.collectionsState.length ? buildCollectionsCard(filterCtx.collectionsState) : 
             <div className="ui grid container filter_gallery-not-available">
                <p className="eight wide">
                   Aucun Artwork trouver pour cette recherche

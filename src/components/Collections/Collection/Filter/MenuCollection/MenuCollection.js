@@ -6,11 +6,11 @@ import { SortByOptions } from '../../../../../store/Collection/data/data';
 
 import './style.scss';
 
-function MenuCollection(props) {
+function MenuCollection() {
     const filterCtx = useContext(FilterContext);
 
     function onFilteredPrice(event) {
-        props.onSetPriceLabel(event.target.textContent);
+        filterCtx.sortArtworkByPrice(event.target.textContent);
     };
 
     function onResetHandler() {

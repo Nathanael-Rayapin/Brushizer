@@ -1,27 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useContext, useEffect } from 'react';
 import { Form } from 'semantic-ui-react';
-import { addToCollection, removeActiveForms } from '../../../../../../store/Collection/function/function';
+import { addToCollection } from '../../../../../../store/Collection/function/function';
 import { ShapeOptions, BackgroundOptions, ShapecolorOptions } from '../../../../../../store/Collection/data/data';
 
 import FilterContext from '../../../../../../store/Collection/context/filter-context';
 import artworks from '../../../../../../data/artworks.json';
 
 const ContentAccordion = (props) => {
-    const [useEffetChange, setUseEffetChange] = useState(false);
     const filterCtx = useContext(FilterContext);
+    const [useEffetChange, setUseEffetChange] = useState(false);
 
     // React to All Checkbox Changes
     useEffect(() => {
       if (props.getcount > 0) {
-          const collections = addToCollection(artworks, props.getactiveforms);
-          props.setcollections(collections);
+          const collections = addToCollection(artworks, filterCtx.formsState);
+          filterCtx.collectionsChange(collections);
         }
     }, [useEffetChange]);
 
     // Manage Collections
     function manageCollections(event, checked, formTitle, index) {
-      filterCtx.checkboxChange(formTitle, index)
+      filterCtx.checkboxChange(formTitle, index);
 
       switch (checked) {
         case true :
@@ -31,17 +31,17 @@ const ContentAccordion = (props) => {
           newForm["form"] = formTitle;
 
           if (props.getcount === 0) {
-            props.setactiveforms([newForm]);
+            filterCtx.addActivesForms(newForm)
             reactToChange("plus");
           } else {
-            props.setactiveforms(oldValues => ([...oldValues, newForm]));
+            filterCtx.addActivesForms(newForm)
             reactToChange("plus");
           }
         break;
         case false :
           if (props.getcount === 1) {
             reusableUnchekedFunc(event, formTitle);
-            props.setcollections(artworks);
+            filterCtx.collectionsChange(artworks);
           } else { 
             reusableUnchekedFunc(event, formTitle);
           }
@@ -56,7 +56,7 @@ const ContentAccordion = (props) => {
     // Re-Usable Unchecked Function
     function reusableUnchekedFunc(event, formTitle) {
       const checkboxValue = (event.target.textContent).toLowerCase();
-      removeActiveForms(props.getactiveforms, checkboxValue, formTitle);
+      filterCtx.removeActivesForms(checkboxValue, formTitle);
       reactToChange("moins");
     }
 
