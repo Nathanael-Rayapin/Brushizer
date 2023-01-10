@@ -4,6 +4,8 @@ const FilterContext = React.createContext({
     // Variables
     sortArtworkState: '',
     tagsState: [],
+    searchState: [],
+    searchText: [],
     checkboxStateShp: [],
     checkboxStateBgd: [],
     checkboxStateShc: [],
@@ -12,6 +14,7 @@ const FilterContext = React.createContext({
     countState: 0,
     // Functions
     sortArtworkByPrice: () => {},
+    searchChange: () => {},
     checkboxChange: () => {},
     checkboxesReset: () => {},
     collectionsChange: () => {},

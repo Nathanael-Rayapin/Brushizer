@@ -63,15 +63,15 @@ function Attributes() {
           <Tag />
           {/* Artworks Gallery */}
           <div className='filter_gallery_items'>
-          { filterCtx.collectionsState.length ? buildCollectionsCard(filterCtx.collectionsState) : 
-            <div className="ui grid container filter_gallery-not-available">
-               <p className="eight wide">
-                  Aucun Artwork trouver pour cette recherche
-              </p>
-            </div> }
+          { filterCtx.searchText ? buildCollectionsCard(filterCtx.searchState) : 
+          (filterCtx.collectionsState.length ? buildCollectionsCard(filterCtx.collectionsState) : 
+          <div className="ui grid container filter_gallery-not-available">
+            <p className="eight wide">
+                Aucun Artwork trouver pour cette recherche
+            </p>
+          </div>) }
           </div>
         </div>
-
       </Fragment>
       );
 };

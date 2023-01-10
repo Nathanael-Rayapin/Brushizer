@@ -8,6 +8,8 @@ import artworks from '../../../data/artworks.json';
 const defaultChekboxState = {
     sortArtworkState: 'Price low to high',
     tagsState: [],
+    searchState:  new Array(...artworks),
+    searchText: '',
     checkboxStateShp: new Array(ShapeOptions.length).fill(false),
     checkboxStateBgd: new Array(BackgroundOptions.length).fill(false),
     checkboxStateShc: new Array(ShapecolorOptions.length).fill(false),
@@ -23,6 +25,20 @@ const collectionReducer = (state, action) => {
             return {
                 ...state,
                 sortArtworkState: action.payload
+            };
+        case 'SEARCH':
+            if (action.payload === '') {
+                return {
+                    ...state,
+                    searchText: action.payload,
+                    searchState: new Array(...artworks)
+                }
+            } else {
+                return {
+                    ...state,
+                    searchText: action.payload,
+                    searchState: artworks.filter((artwork) => artwork.name.toLowerCase().match(action.payload))
+                };
             };
         case 'SHAPE':
             return {
@@ -136,10 +152,16 @@ const FilterProvider = props => {
         dispatchCollectionAction({type: 'COUNT', payload: count });
     };
 
+    const searchChangeHandler = (searchText) => {
+        dispatchCollectionAction({type: 'SEARCH', payload: searchText});
+    }
+
     const filterContext = {
         // Variables
         sortArtworkState: collectionState.sortArtworkState,
         tagsState: collectionState.tagsState,
+        searchState: collectionState.searchState,
+        searchText: collectionState.searchText,
         checkboxStateShp: collectionState.checkboxStateShp,
         checkboxStateBgd: collectionState.checkboxStateBgd,
         checkboxStateShc: collectionState.checkboxStateShc,
@@ -148,6 +170,7 @@ const FilterProvider = props => {
         countState: collectionState.countState,
         // Functions
         sortArtworkByPrice: sortArtworkByPriceHandler,
+        searchChange: searchChangeHandler,
         checkboxChange: checkboxChangeHandler,
         checkboxesReset: checkboxesResetHandler,
         collectionsChange: collectionsChangeHandler,

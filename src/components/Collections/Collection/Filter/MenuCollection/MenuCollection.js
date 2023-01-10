@@ -6,16 +6,20 @@ import { SortByOptions } from '../../../../../store/Collection/data/data';
 
 import './style.scss';
 
-function MenuCollection() {
+const MenuCollection = () => {
     const filterCtx = useContext(FilterContext);
 
-    function onFilteredPrice(event) {
+    const onFilteredPrice = (event) => {
         filterCtx.sortArtworkByPrice(event.target.textContent);
     };
 
-    function onResetHandler() {
+    const onResetHandler = () => {
         filterCtx.checkboxesReset();
     };
+
+    const onSearchHandler = (event) => {
+        filterCtx.searchChange(event.target.value);
+    }
 
     return (
         <Menu className='filter_menu'>
@@ -23,7 +27,8 @@ function MenuCollection() {
             <Search
             className='filter_menu_search'
             input={{ icon: 'search', iconPosition: 'left' }}
-            placeholder="Search in collection ..." />
+            placeholder="Search in collection ..."
+            onSearchChange={onSearchHandler} />
             <Dropdown 
             className='filter_menu_dropdown' 
             defaultValue={"1"} 
