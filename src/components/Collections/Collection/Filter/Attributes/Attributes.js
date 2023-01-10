@@ -1,9 +1,11 @@
 import { Fragment, useState, useContext } from 'react';
-import { Accordion, Menu, Icon } from 'semantic-ui-react';
-import { buildCollectionsCard, sortPrice } from '../../../../../store/Collection/function/function';
+import { Accordion, Menu } from 'semantic-ui-react';
+import { buildCollectionsCard } from '../../../../../store/Collection/function/build';
+import { sortPrice } from '../../../../../store/Collection/function/utils';
 
 import FilterContext from '../../../../../store/Collection/context/filter-context';
 import ContentAccordion from './ContentAccordion/ContentAccordion';
+import Tag from '../../../../UI/Tag/Tag';
 import './style.scss';
 
 function Attributes() {
@@ -55,18 +57,10 @@ function Attributes() {
                 </Menu.Item>
             </Accordion>
         </div>
+
         <div className='filter_gallery'>
           {/* Tags Button */}
-          <div className='filter_gallery_tags'>
-            <div className='filter_gallery_tags--tag'>Blue <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
-            <div className='filter_gallery_tags--tag'>001 <Icon className='filter_gallery_tags--delete' name='close' size='small' /></div>
-            <button className='filter_gallery_tags_button'>
-              <Icon 
-              className='filter_gallery_tags_button--icon' 
-              name='undo' 
-              size='large'/>
-            </button>
-          </div>
+          <Tag />
           {/* Artworks Gallery */}
           <div className='filter_gallery_items'>
           { filterCtx.collectionsState.length ? buildCollectionsCard(filterCtx.collectionsState) : 
@@ -77,6 +71,7 @@ function Attributes() {
             </div> }
           </div>
         </div>
+
       </Fragment>
       );
 };

@@ -1,4 +1,4 @@
-import Card from "../../../components/UI/Card/Card";
+import { noDuplicateItems } from './utils';
 
 // Add new Collection when Checked
 export function addToCollection(artworks, activesForms) {
@@ -47,10 +47,6 @@ export function addToCollection(artworks, activesForms) {
   };
 };
 
-// Create Unique Values
-export function noDuplicateItems(value, index, self) {
-  return self.indexOf(value) === index;
-};
 
 // Remove Active Form when UnChecked
 export function removeActiveForms(activesForms, checkboxValue, formTitle) {
@@ -62,33 +58,6 @@ export function removeActiveForms(activesForms, checkboxValue, formTitle) {
   });
 
   return activesForms.splice(index, 1);
-};
-
-// Build Cards in JSX (Render UI/Card.js)
-export function buildCollectionsCard(collections) {
-  return collections.map((collection) => {
-  return (<Card
-  key={collection.id}
-  image={`/assets/nft/${collection.image}`}
-  name={collection.name}
-  price_sol={collection.price_sol}
-  price_usd={collection.price_usd}/> 
-  )});
-};
-
-// Sort Price by Label value (Low or High)
-export function sortPrice(collections, priceLabel) {
-  switch (priceLabel) {
-    case "Price low to high":
-    collections.sort((a, b) => parseFloat(a.price_sol) - parseFloat(b.price_sol));
-    break;
-    case "Price high to low":
-    collections.sort((a, b) => parseFloat(b.price_sol) - parseFloat(a.price_sol));
-    break;
-    default:
-    collections.sort((a, b) => parseFloat(a.price_sol) - parseFloat(b.price_sol));
-    break;
-  };
 };
 
 // Build Deep filter Funtion => Isn't Dynamic for Now

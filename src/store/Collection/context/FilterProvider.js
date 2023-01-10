@@ -7,6 +7,7 @@ import artworks from '../../../data/artworks.json';
 // Initial State
 const defaultChekboxState = {
     sortArtworkState: 'Price low to high',
+    tagsState: [],
     checkboxStateShp: new Array(ShapeOptions.length).fill(false),
     checkboxStateBgd: new Array(BackgroundOptions.length).fill(false),
     checkboxStateShc: new Array(ShapecolorOptions.length).fill(false),
@@ -47,8 +48,11 @@ const collectionReducer = (state, action) => {
                 collectionsState: action.payload
             };
         case 'ADD_FORMS':
+            const capitalizeValue = action.payload.value.charAt(0).toUpperCase() + action.payload.value.slice(1);
+
             return {
                 ...state,
+                tagsState: [...state.tagsState, capitalizeValue],
                 formsState: [...state.formsState, action.payload]
             };
         case 'REMOVE_FORMS':
@@ -58,10 +62,13 @@ const collectionReducer = (state, action) => {
                 && object.form === action.payload.formsTitle
                 );
             });
+
             state.formsState.splice(index, 1);
+            state.tagsState.splice(index, 1);
 
             return {
                 ...state,
+                tagsState: state.tagsState,
                 formsState: state.formsState
             };
         case 'COUNT':
@@ -132,6 +139,7 @@ const FilterProvider = props => {
     const filterContext = {
         // Variables
         sortArtworkState: collectionState.sortArtworkState,
+        tagsState: collectionState.tagsState,
         checkboxStateShp: collectionState.checkboxStateShp,
         checkboxStateBgd: collectionState.checkboxStateBgd,
         checkboxStateShc: collectionState.checkboxStateShc,

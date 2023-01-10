@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useContext, useEffect } from 'react';
 import { Form } from 'semantic-ui-react';
-import { addToCollection } from '../../../../../../store/Collection/function/function';
+import { addToCollection } from '../../../../../../store/Collection/function/filter';
 import { ShapeOptions, BackgroundOptions, ShapecolorOptions } from '../../../../../../store/Collection/data/data';
 
 import FilterContext from '../../../../../../store/Collection/context/filter-context';

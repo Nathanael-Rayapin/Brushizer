@@ -3,6 +3,7 @@ import React from 'react';
 const FilterContext = React.createContext({
     // Variables
     sortArtworkState: '',
+    tagsState: [],
     checkboxStateShp: [],
     checkboxStateBgd: [],
     checkboxStateShc: [],

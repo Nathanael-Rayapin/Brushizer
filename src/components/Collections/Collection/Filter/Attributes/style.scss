@@ -39,46 +39,6 @@
     flex-direction: column;
     align-items: flex-start;
 
-    &_tags {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 1.5rem 1.5rem 0.5rem;
-
-        &--tag {
-            padding: 0.85rem;
-            background-color: v.$first-color;
-            color: v.$fourth-color;
-            border-radius: 1.5rem;
-            font-weight: 600;
-            margin-right: .5rem;
-        }
-        &--delete {
-            color: v.$second-color !important;
-            transition: color 0.5s ease 0s;
-            &:hover {
-                cursor: pointer;
-                transition: color 0.5s ease 0s;
-                color: v.$fourth-color !important;
-            }
-        }
-
-        &_button {
-            border: none;
-            background-color: transparent;
-            border-radius: 50%;
-
-            &--icon {
-                color: v.$first-color;
-                transition: color 0.5s ease 0s;
-                &:hover {
-                    transition: color 0.5s ease 0s;
-                    color: v.$fourth-color;
-                }
-            }
-        }
-    }
-
     &_items {
         display: flex;
         flex-wrap: wrap;
